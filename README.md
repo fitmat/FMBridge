@@ -4,9 +4,11 @@ This bridge is used to connect mat functionality to your game.
 
 ## Download
 
-Add this file to your project to get started.
+Add these files to your project to get started.
 
 [BLEControllerEventHandler](https://github.com/fitmat/FMBridge/blob/master/example/BLEControllerEventHandler.cs)
+[FitmatDriver.aar](https://github.com/fitmat/FMBridge/blob/master/FitmatDriver.aar)
+Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
 
 ## Example
 
@@ -17,13 +19,17 @@ Visit example folder to check sammple project files and usage
 ## Usage
 
 ```csharp
-//STEP 1 - Declare FMVariables
+
+//STEP 1 - Download FitmatDriver.aar
+//Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
+
+//STEP 2 - Declare FMVariables
 static AndroidJavaClass _pluginClass;
 static AndroidJavaObject _pluginInstance;
 const string driverPathName = "com.fitmat.fitmatdriver.Connection.DeviceControlActivity";
 string FMResponseCount = "";
 
-//STEP 2 - Create Unity Callback class
+//STEP 3 - Create Unity Callback class
 class UnityCallback : AndroidJavaProxy
 {
     private System.Action<string> initializeHandler;
@@ -43,7 +49,7 @@ class UnityCallback : AndroidJavaProxy
 }
 
 
-//STEP 3 - Init Android Class & Objects
+//STEP 4 - Init Android Class & Objects
 public static AndroidJavaClass PluginClass
 {
     get
@@ -71,7 +77,7 @@ public static AndroidJavaObject PluginInstance
 }
 
 
-//STEP 4 - Init Android Class & Objects
+//STEP 5 - Init Android Class & Objects
 public static void InitBLEFramework()
 {
        
@@ -99,7 +105,7 @@ public static void InitBLEFramework()
     #endif
 }
 
-//STEP 5 - Call InitBLEFramework() in Awake()
+//STEP 6 - Call InitBLEFramework() in Awake()
 void Awake()
 {
     InitBLEFramework();
