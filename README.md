@@ -26,48 +26,48 @@ string FMResponseCount = "";
 //STEP 2 - Create Unity Callback class
 class UnityCallback : AndroidJavaProxy
 {
-        private System.Action<string> initializeHandler;
-        public UnityCallback(System.Action<string> initializeHandlerIn) : base(driverPathName + "$UnityCallback")
-        {
-            initializeHandler = initializeHandlerIn;
-        }
+    private System.Action<string> initializeHandler;
+    public UnityCallback(System.Action<string> initializeHandlerIn) : base(driverPathName + "$UnityCallback")
+    {
+        initializeHandler = initializeHandlerIn;
+    }
 
-        public void sendMessage(string message)
+    public void sendMessage(string message)
+    {
+        Debug.Log("sendMessage: " + message);
+        if (initializeHandler != null)
         {
-            Debug.Log("sendMessage: " + message);
-            if (initializeHandler != null)
-            {
-                initializeHandler(message);
-            }
+            initializeHandler(message);
         }
+    }
 }
 
 
 //STEP 3 - Init Android Class & Objects
 public static AndroidJavaClass PluginClass
 {
-        get
+    get
+    {
+        if (_pluginClass == null)
         {
-            if (_pluginClass == null)
-            {
-                _pluginClass = new AndroidJavaClass(driverPathName);
-            }
-            return _pluginClass;
+            _pluginClass = new AndroidJavaClass(driverPathName);
         }
+        return _pluginClass;
+    }
 }
 
 public static AndroidJavaObject PluginInstance
 {
-        get
+    get
+    {
+        if (_pluginInstance == null)
         {
-            if (_pluginInstance == null)
-            {
-                AndroidJavaClass playerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-                AndroidJavaObject activity = playerClass.GetStatic<AndroidJavaObject>("currentActivity");
-                _pluginInstance = PluginClass.CallStatic<AndroidJavaObject>("getInstance", activity);
-            }
-            return _pluginInstance;
+            AndroidJavaClass playerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            AndroidJavaObject activity = playerClass.GetStatic<AndroidJavaObject>("currentActivity");
+            _pluginInstance = PluginClass.CallStatic<AndroidJavaObject>("getInstance", activity);
         }
+        return _pluginInstance;
+    }
 }
 
 
@@ -75,28 +75,34 @@ public static AndroidJavaObject PluginInstance
 public static void InitBLEFramework()
 {
        
-        #if UNITY_IPHONE
-                // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
-                if (Application.platform == RuntimePlatform.IPhonePlayer)
+    #if UNITY_IPHONE
+            // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                _InitBLEFramework();
+            }
+    #elif UNITY_ANDROID
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                System.Action<string> callback = ((string message) =>
                 {
-                    _InitBLEFramework();
-                }
-        #elif UNITY_ANDROID
-                if (Application.platform == RuntimePlatform.Android)
-                {
-                            System.Action<string> callback = ((string message) =>
-                            {
-                                BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
-                      
-                            });
-                            string macaddress = "A4:34:F1:A5:99:18";
-                            int gameId = 2;
-                            PluginInstance.Call("_setMACAddress", macaddress);
-                            PluginInstance.Call("_setGameID", gameId);
-                            PluginInstance.Call("_InitBLEFramework",new object[] { new UnityCallback(callback) });
-                    
-                }
-        #endif
+                    BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
+          
+                });
+                string macaddress = "A4:34:F1:A5:99:18";
+                int gameId = 2;
+                PluginInstance.Call("_setMACAddress", macaddress);
+                PluginInstance.Call("_setGameID", gameId);
+                PluginInstance.Call("_InitBLEFramework",new object[] { new UnityCallback(callback) });
+                
+            }
+    #endif
+}
+
+//STEP 5 - Call InitBLEFramework() in Awake()
+void Awake()
+{
+    InitBLEFramework();
 }
 ```
 
