@@ -1,18 +1,18 @@
 # FMBridge
 
-This bridge is used to connect mat functionality to your game.
+This bridge is used to connect Fitmat to your game.
 
 ## Download
 
 Add these files to your project to get started.
 
-[BLEControllerEventHandler](https://github.com/fitmat/FMBridge/blob/master/example/BLEControllerEventHandler.cs)
-[FitmatDriver.aar](https://github.com/fitmat/FMBridge/blob/master/FitmatDriver.aar)
-Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
+[BLEControllerEventHandler](https://github.com/fitmat/FMBridge/blob/master/example/BLEControllerEventHandler.cs) - Add to your scripts
+
+[FitmatDriver.aar](https://github.com/fitmat/FMBridge/blob/master/FitmatDriver.aar)- Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
 
 ## Example
 
-Visit example folder to check sammple project files and usage
+Visit example folder to check sample project files and usage
 [example](https://github.com/fitmat/FMBridge/blob/master/example/)
 
 
@@ -20,8 +20,9 @@ Visit example folder to check sammple project files and usage
 
 ```csharp
 
-//STEP 1 - Download FitmatDriver.aar
-//Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
+//STEP 1 - Download Essentials
+//1.1 - Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
+//1.2 - Download and copy BLEControllerEventHandler.cs and move it to {Unity_Project}\Assets\Scripts
 
 //STEP 2 - Declare FMVariables
 static AndroidJavaClass _pluginClass;
