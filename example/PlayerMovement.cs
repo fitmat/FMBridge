@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
                                 BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
                       
                             });
-                            string macaddress = "A4:34:F1:A5:99:18";
+                            string macaddress = "A4:34:F1:A5:99:5B";
                             int gameId = 2;
                             PluginInstance.Call("_setMACAddress", macaddress);
                             PluginInstance.Call("_setGameID", gameId);
