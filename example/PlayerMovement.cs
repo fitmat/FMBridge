@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
-    AndroidJavaClass plugincall;
+
     public LevelManager levelmanager;
     public Camera myCam;
     private Rigidbody2D player;
@@ -25,129 +25,18 @@ public class PlayerMovement : MonoBehaviour
     //private SpriteRenderer mySpriteRenderer;
 
 
-    //FMDRiver Variable declaration
-    static AndroidJavaClass _pluginClass;
-    static AndroidJavaObject _pluginInstance;
-    const string driverPathName = "com.fitmat.fitmatdriver.Connection.DeviceControlActivity";
     string FMResponseCount = "";
 
 
     private bool IsFacingRight;
 
-      /* 
-    class UnityCallback : AndroidJavaProxy
-    {
-        private System.Action<string> initializeHandler;
-        public UnityCallback(System.Action<string> initializeHandlerIn) : base(driverPathName + "$UnityCallback")
-        {
-            initializeHandler = initializeHandlerIn;
-        }
-
-        public void sendMessage(string message)
-        {
-            Debug.Log("sendMessage: " + message);
-            if (initializeHandler != null)
-            {
-                initializeHandler(message);
-            }
-        }
-    }
-
-
-
-    public static AndroidJavaClass PluginClass
-    {
-        get
-        {
-            if (_pluginClass == null)
-            {
-                _pluginClass = new AndroidJavaClass(driverPathName);
-            }
-            return _pluginClass;
-        }
-    }
-
-    public static AndroidJavaObject PluginInstance
-    {
-        get
-        {
-            if (_pluginInstance == null)
-            {
-                AndroidJavaClass playerClass = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-                AndroidJavaObject activity = playerClass.GetStatic<AndroidJavaObject>("currentActivity");
-                _pluginInstance = PluginClass.CallStatic<AndroidJavaObject>("getInstance", activity);
-            }
-            return _pluginInstance;
-        }
-    }
-
-    // Now make methods that you can provide the iOS functionality
-    public static void InitBLEFramework()
-    {
-        // We check for UNITY_IPHONE again so we don't try this if it isn't iOS platform.
-        #if UNITY_IPHONE
-                // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
-                if (Application.platform == RuntimePlatform.IPhonePlayer)
-                {
-                    _InitBLEFramework();
-                }
-        #elif UNITY_ANDROID
-                        if (Application.platform == RuntimePlatform.Android)
-                        {
-                            System.Action<string> callback = ((string message) =>
-                            {
-                                BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
-                      
-                            });
-                            string macaddress = "A4:34:F1:A5:99:5B";
-                            int gameId = 1;
-                            PluginInstance.Call("_setMACAddress", macaddress);
-                            PluginInstance.Call("_setGameID", gameId);
-                            PluginInstance.Call("_InitBLEFramework",new object[] { new UnityCallback(callback) });
-                    
-                }
-        #endif
-    }*/
 
     void Awake()
     {
         InitBLE.InitBLEFramework("54:6C:0E:20:A0:3B", 2);  //InitBLEFramework( String macaddress, int gameID )
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // get a reference to the SpriteRenderer component on this gameObject
-        //mySpriteRenderer = GetComponent<SpriteRenderer>();
-        player = GetComponent<Rigidbody2D>();
-        IsFacingRight = false;
-        if (myCam == null)
-        {
-            myCam = Camera.main;
-        }
-        Vector3 UpperCorner = new Vector3(Screen.width, Screen.height, 0.0f);
-        Vector3 SceneWidth = myCam.ScreenToWorldPoint(UpperCorner);
-        maxWidth = SceneWidth.x;
-
-        PlayerStartPosition = myCam.transform.position.x;
-        Vector3 InitialPlayerPosition = new Vector3(PlayerStartPosition, player.position.y, 0.0f);
-        player.MovePosition(InitialPlayerPosition);
-
-        //Depending upon the scene, wheteher 3 laned or 5 laned, player movment would be restricted.
-        if ((levelmanager.currentLevel == "ECLevel1") || (levelmanager.currentLevel == "ECLevel3"))
-        {
-            //Decide X displacement limits for the player.
-            PlayerSingleDisplacement = (maxWidth / 2);
-            PlayerXLimit = PlayerSingleDisplacement;
-        }
-        else if (levelmanager.currentLevel == "ECLevel2")
-        {
-            //Decide X displacement limits for the player.
-            PlayerSingleDisplacement = (maxWidth / 4);
-            PlayerXLimit = 2 * PlayerSingleDisplacement;
-        }
-    }
-
+    
+    
     void Update()
     {
         if (cancontrol)
@@ -184,38 +73,6 @@ public class PlayerMovement : MonoBehaviour
                 }
 
             }
-            
-            
-
-            //textstring = plugincall.CallStatic<string>("ReturnData");
-            //if (previousString != textstring)
-            //{
-            //    previousString = textstring;
-            //    if (textstring == "Left Move")
-            //    {
-            //        float targetwidth = Mathf.Clamp(player.position.x - PlayerSingleDisplacement, PlayerStartPosition - PlayerXLimit, PlayerStartPosition + PlayerXLimit);
-            //        Vector3 newPlayerPosition = new Vector3(targetwidth, player.position.y, 0.0f);
-            //        //if (IsFacingRight)
-            //          //  FlipPlayer();
-            //        player.MovePosition(newPlayerPosition);
-            //    }
-            //    if (textstring == "Right Move")
-            //    {
-            //        float targetwidth = Mathf.Clamp(player.position.x + PlayerSingleDisplacement, PlayerStartPosition - PlayerXLimit, PlayerStartPosition + PlayerXLimit);
-            //        Vector3 newPlayerPosition = new Vector3(targetwidth, player.position.y, 0.0f);
-            //        //if (!IsFacingRight)
-            //         //   FlipPlayer();
-            //        player.MovePosition(newPlayerPosition);
-            //    }
-            //    if (textstring == "Jumping")
-            //    {
-
-            //    }
-            //    if (textstring == "Bending")
-            //    {
-
-            //    }
-            //}
 
             //Read KeyBoard Input
             if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -254,6 +111,43 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        // get a reference to the SpriteRenderer component on this gameObject
+        //mySpriteRenderer = GetComponent<SpriteRenderer>();
+        player = GetComponent<Rigidbody2D>();
+        IsFacingRight = false;
+        if (myCam == null)
+        {
+            myCam = Camera.main;
+        }
+        Vector3 UpperCorner = new Vector3(Screen.width, Screen.height, 0.0f);
+        Vector3 SceneWidth = myCam.ScreenToWorldPoint(UpperCorner);
+        maxWidth = SceneWidth.x;
+
+        PlayerStartPosition = myCam.transform.position.x;
+        Vector3 InitialPlayerPosition = new Vector3(PlayerStartPosition, player.position.y, 0.0f);
+        player.MovePosition(InitialPlayerPosition);
+
+        //Depending upon the scene, wheteher 3 laned or 5 laned, player movment would be restricted.
+        if ((levelmanager.currentLevel == "ECLevel1") || (levelmanager.currentLevel == "ECLevel3"))
+        {
+            //Decide X displacement limits for the player.
+            PlayerSingleDisplacement = (maxWidth / 2);
+            PlayerXLimit = PlayerSingleDisplacement;
+        }
+        else if (levelmanager.currentLevel == "ECLevel2")
+        {
+            //Decide X displacement limits for the player.
+            PlayerSingleDisplacement = (maxWidth / 4);
+            PlayerXLimit = 2 * PlayerSingleDisplacement;
+        }
+    }
+
+    
 
     public void toggelControl(bool toggle)
     {
