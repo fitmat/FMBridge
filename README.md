@@ -29,7 +29,8 @@ Visit example folder to check sample project files and usage
 //STEP 2 - Call InitBLEFramework() in Awake() with macaddress and gameid
 void Awake()
 {
-    InitBLEFramework(macAddress, GameID);
+	//params ( String macAdress, int GameID )
+    InitBLEFramework(macAddress, GameID);  
 }
 ```
 
