@@ -7,6 +7,7 @@ public class InitBLE
     static AndroidJavaObject _pluginInstance;
     const string driverPathName = "com.fitmat.fitmatdriver.Connection.DeviceControlActivity";
     string FMResponseCount = "";
+    static string BLEStatus = "";
 
 
     //STEP 3 - Create Unity Callback class
@@ -18,9 +19,29 @@ public class InitBLE
             initializeHandler = initializeHandlerIn;
         }
 
+       
+        
         public void sendMessage(string message)
         {
             Debug.Log("sendMessage: " + message);
+            if(message == "connected")
+            {
+                InitBLE.BLEStatus = "CONNECTED";
+            }
+            if (message == "disconnected")
+            {
+                InitBLE.BLEStatus = "DISCONNECTED";
+            }
+
+            if (message == "lost")
+            {
+                InitBLE.BLEStatus = "CONNECTION LOST";
+            }
+            if (message.Contains("error"))
+            {
+                InitBLE.BLEStatus = "ERROR";
+            }
+
             if (initializeHandler != null)
             {
                 initializeHandler(message);
@@ -56,6 +77,10 @@ public class InitBLE
         }
     }
 
+    public static String getBLEStatus()
+    {
+        return BLEStatus;
+    }
 
     //STEP 5 - Init Android Class & Objects
     public static void InitBLEFramework(String macaddress, int gameID)
@@ -73,7 +98,6 @@ public class InitBLE
                 System.Action<string> callback = ((string message) =>
                 {
                     BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
-
                 });
                 //string macaddress = "A4:34:F1:A5:99:5B";
                 //int gameId = 2;
