@@ -83,7 +83,7 @@ public class InitBLE
     }
 
     //STEP 5 - Init Android Class & Objects
-    public static void InitBLEFramework(String macaddress, int gameID)
+    public static void InitBLEFramework(String macaddress)
     {
 
     #if UNITY_IPHONE
@@ -110,7 +110,7 @@ public class InitBLE
     }
 
 
-    public static void setGameID(int gameID)
+    public static void setGameClusterID(int gameID)
     {
         PluginInstance.Call("_setGameID", gameID);
     }
