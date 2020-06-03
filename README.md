@@ -1,6 +1,28 @@
+
+
 # FMBridge
 
 This bridge is used to connect Fitmat to your game.
+
+## Whats new in the release
+Version - 0.1.9
+Changes -
+Added two methods
+ 1. _getDriverVersion() : returns String
+ 2. _getGameID() : returns Int
+
+
+## Game Identifier Table
+```gherkin
+|   Game Name   |   Game ID   |                Action Output                  |
+|---------------|-------------|-----------------------------------------------|
+| Joyfull Jumps |      1      | Running+23+2.3, Running Stopped, Jumping      |
+| Yipli Runner  |      2      | Left Move, Right Move, Jumping                |
+| Egg Catcher   |      3      | Left Move, Right Move                         |
+| Skater        |      4      | Jump In, Jump Out                             |
+```
+
+
 
 ## Download
 
