@@ -13,14 +13,14 @@ Added two methods
 
 
 ## Game Identifier Table
-```gherkin
+
 |   Game Name   |   Game ID   |                Action Output                  |
 |---------------|-------------|-----------------------------------------------|
 | Joyfull Jumps |      1      | Running+23+2.3, Running Stopped, Jumping      |
 | Yipli Runner  |      2      | Left Move, Right Move, Jumping                |
 | Egg Catcher   |      3      | Left Move, Right Move                         |
 | Skater        |      4      | Jump In, Jump Out                             |
-```
+
 
 
 
