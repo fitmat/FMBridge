@@ -9,7 +9,13 @@ Version - 0.1.9
 Changes -
 Added two methods
  1. _getDriverVersion() : returns String
+ ```csharp
+ String DriverVersion = PluginInstance.Call("_getDriverVersion");
+ ```
  2. _getGameID() : returns Int
+  ```csharp
+ int CurrentGameID = PluginInstance.Call("_getGameID");
+ ```
 
 
 ## Game Identifier Table
