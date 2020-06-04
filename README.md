@@ -5,7 +5,7 @@
 This bridge is used to connect Fitmat to your game.
 
 ## Whats new in the release
-Version - 0.1.9
+Version - 0.1.10
 Changes -
 Added two methods
  1. _getDriverVersion() : returns String
@@ -17,6 +17,8 @@ Added two methods
  int CurrentGameID = PluginInstance.Call("_getGameID");
  ```
 
+ 3. Changed the cluster for egg catcher and skater
+
 
 ## Game Identifier Table
 
@@ -24,8 +26,8 @@ Added two methods
 |---------------|-------------|-----------------------------------------------|
 | Joyfull Jumps |      1      | Running+23+2.3, Running Stopped, Jumping      |
 | Yipli Runner  |      2      | Left Move, Right Move, Jumping                |
-| Egg Catcher   |      3      | Left Move, Right Move                         |
-| Skater        |      4      | Jump In, Jump Out                             |
+| Egg Catcher   |      2      | Left Move, Right Move, Jumping                |
+| Skater        |      3      | Jump In, Jump Out                             |
 
 
 
