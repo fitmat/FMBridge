@@ -5,18 +5,10 @@
 This bridge is used to connect Fitmat to your game.
 
 ## Whats new in the release
-Version - 0.1.10
+Version - 0.1.11
 Changes -
 Added two methods
- 1. _getDriverVersion() : returns String
- ```csharp
- String DriverVersion = PluginInstance.Call("_getDriverVersion");
- ```
- 2. _getGameID() : returns Int
-  ```csharp
- int CurrentGameID = PluginInstance.Call("_getGameID");
- ```
-
+ 1. Upadated Skater detection algorithm
  3. Changed the cluster for egg catcher and skater
 
 
@@ -40,7 +32,6 @@ Add these files to your project to get started.
 
 [InitBLE](https://github.com/fitmat/FMBridge/blob/master/example/InitBLE.cs) - Add to your scripts
 
-[FitmatDriver.aar](https://github.com/fitmat/FMBridge/blob/master/FitmatDriver.aar)- Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
 
 ## Example
 
