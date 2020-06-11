@@ -5,10 +5,11 @@
 This bridge is used to connect Fitmat to your game.
 
 ## Whats new in the release
-Version - 0.1.11
+Version - 0.1.12
 Changes -
 Added two methods
- 1. Upadated Skater detection algorithm
+ 1. Updated "Pause" response count in the driver 
+ 2. Upadated Skater detection algorithm
  3. Changed the cluster for egg catcher and skater
 
 
