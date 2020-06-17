@@ -1,15 +1,15 @@
 
 
 # FMBridge
-
+Version - 0.1.13
 This bridge is used to connect Fitmat to your game.
 
 ## Whats new in the release
-Version - 0.1.12
+
 Changes -
- 1. Updated "Pause" response count in the driver 
- 2. Upadated Skater detection algorithm
- 3. Changed the cluster for egg catcher and skater
+ 1. New MAT Controls added
+ 2. Updated "Pause" response count in the driver 
+ 3. Upadated Skater detection algorithm
 
 
 ## Game Identifier Table
