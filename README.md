@@ -1,13 +1,13 @@
 
 
 # FMBridge
-Version - 0.1.17
+Version - 0.1.18
 This bridge is used to connect Fitmat to your game.
 
 ## Whats new in the release
 
 Changes -
- 1. Changing FMResponse when CID == 0 to Null
+ 1. Changing FMResponse when (CID == 0 && FMResponse == Pause) to Null
 
 
 ## Game Identifier Table
