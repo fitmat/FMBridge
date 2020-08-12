@@ -18,8 +18,18 @@ const string driverPathName = "com.fitmat.fitmatdriver.Connection.DeviceControlA
 //Tothis
 const string driverPathName = "com.fitmat.fitmatdriver.Producer.Connection.DeviceControlActivity";
 ```
+ 2. Update FMReponse parsing 
+```csharp 
+//Change this
+string FMResponse = InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
+Debug.Log("UNITY FMResponse: " + FMResponse);
+string[] FMTokens = FMResponse.Split('.');
+Debug.Log("UNITY FMTokens: " + FMTokens[0]);
 
-
+//Tothis
+string FMResponse = InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
+//TODO JSON Parser - Follow below JSON format and parse accordingly
+```
 ## Game Identifier Table
 
 |   Game Name   |   Game ID   |                Action In the Game             |
