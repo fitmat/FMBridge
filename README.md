@@ -1,13 +1,14 @@
 
 
 # FMBridge
-FMDriver Version - 0.1.20 
+FMDriver Version - 0.1.21 
 
 This bridge is used to connect Fitmat to your game.
 
 ## Whats new in the release
  * FMDriver with new communication protocol (JSON)
 * Updated internal file system for better performance and scalability
+* Updated the reponse for action which has properties
 
 ## Code changes
  1. Change in driverPath in InitBLE.cs (GameLib)
@@ -77,7 +78,10 @@ string FMResponse = InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
       "fmresponse": {
         "action_id": "SWLO",
         "action_name": "Running",
-        "properties": "{totalStepsCount=2, speed=3.21}"
+        "properties": {
+          "totalStepsCount": 2,
+          "speed": "3.21"
+        }
       }
     }
   ]
