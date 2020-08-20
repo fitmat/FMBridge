@@ -70,7 +70,7 @@ PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1
   ]
 }
 
-######## FOR MULTIPLAYER [ YET TO RELEASE ] ########
+######## FOR MULTIPLAYER ########
 {
   "count": 1,                   
   "response_timestamp": 1596803141,
