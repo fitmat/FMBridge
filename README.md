@@ -1,12 +1,13 @@
 
 
 # FMBridge
-FMDriver Version - 0.1.21
+FMDriver Version - 0.1.22
 
 This bridge is used to connect Fitmat to your game.
 
 ## Whats new in the release
- * FMDriver with new communication protocol (JSON)
+* Updated the reponse for Multiplayer
+* FMDriver with new communication protocol (JSON)
 * Updated internal file system for better performance and scalability
 * Updated the reponse for actions which has properties
 
@@ -31,6 +32,15 @@ Debug.Log("UNITY FMTokens: " + FMTokens[0]);
 string FMResponse = InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
 //TODO JSON Parser - Follow below JSON format and parse accordingly
 ```
+ 3. For Multiplayer
+```csharp 
+
+//Add this line after Setting MacAddress
+PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1 for Singleplayer
+
+//For singleplayer calling this method is not necessary 
+
+```
 ## Game Identifier Table
 
 |   Game Name   |   Game ID   |                Action In the Game             |
@@ -46,8 +56,8 @@ string FMResponse = InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
 ```python
 ######## FOR SINGLE PLAYER ########
 {
-  "response_count": 1,                 # Updates every time new action is detected
-  "response_timestamp": 1597237057689, # Time at which response was packaged/created by Driver
+  "count": 1,                 # Updates every time new action is detected
+  "timestamp": 1597237057689, # Time at which response was packaged/created by Driver
   "playerdata": [                      # Array containing player data
     {
       "id": 1,                         # Player ID (For Single-player-1 , Multiplayer it could be 1 or 2 )
@@ -62,11 +72,12 @@ string FMResponse = InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
 
 ######## FOR MULTIPLAYER [ YET TO RELEASE ] ########
 {
-  "response_count": 1,   
+  "count": 1,                   
   "response_timestamp": 1596803141,
-  "playerdata": [
+  "timestamp": [
     {
-      "id": 1,
+      "id": 1,                   # Player ID
+      "count" : 1,               # Individual players response count 
       "fmresponse": {
         "action_id": "9D6O",
         "action_name": "Jump",
@@ -74,7 +85,8 @@ string FMResponse = InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
       }
     },
     {
-      "id": 1,
+      "id": 2,
+      "count" : 5,
       "fmresponse": {
         "action_id": "SWLO",
         "action_name": "Running",
