@@ -73,7 +73,7 @@ PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1
 ######## FOR MULTIPLAYER ########
 {
   "count": 1,                   
-  "1596803141": 1596803141,
+  "timestamp": 1596803141,
   "playerdata": [                # Array containing player data
     {
       "id": 1,                   # Player ID
