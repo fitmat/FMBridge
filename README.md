@@ -11,6 +11,24 @@ This bridge is used to connect Fitmat to your game.
 * Updated internal file system for better performance and scalability
 * Updated the reponse for actions which has properties
 
+## Usage
+
+```csharp
+
+//STEP 1 - Download Essentials
+//1.1 - Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
+//1.2 - Download and copy InitBLE.cs & BLEControllerEventHandler.cs and move it to {Unity_Project}\Assets\Scripts
+
+//STEP 2 - Call InitBLEFramework() in Awake() with macaddress and gameid from your controller file
+void Awake()
+{
+  //params ( String macAdress, int GameID )
+    InitBLEFramework(macAddress, GameID);  
+    //Add this line after Setting MacAddress
+    Boolean gameModeSet = PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1 for Singleplayer. Also method returns boolean for result
+}
+```
+
 ## Code changes
  1. Change in driverPath in InitBLE.cs (GameLib)
 ```csharp 
