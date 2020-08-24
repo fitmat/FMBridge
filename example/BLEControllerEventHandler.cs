@@ -1,4 +1,4 @@
-﻿namespace BLEFramework.Unity
+namespace BLEFramework.Unity
 {
     using UnityEngine;
     using System.Collections;
@@ -72,9 +72,9 @@
                 if (numOfBytes != 0)
                 {
                     Debug.Log("BLEController.GetData(); start");
-                   // byte[] data = BLEController.GetData(numOfBytes);
+                    // byte[] data = BLEController.GetData(numOfBytes);
                     Debug.Log("BLEController.GetData(); end");
-                   // OnBleDidReceiveDataEvent?.Invoke(data, numOfBytes);
+                    // OnBleDidReceiveDataEvent?.Invoke(data, numOfBytes);
                 }
                 else
                 {
@@ -91,19 +91,17 @@
         {
             string errorMessage = message != "Success" ? message : null;
             List<object> peripheralsList = new List<object>();
-           /* string peripheralJsonList = (errorMessage == null) ? BLEController.GetListOfDevices() : null;
-            if (peripheralJsonList != null)
-            {
-                Dictionary<string, object> dictObject = Json.Deserialize(peripheralJsonList) as Dictionary<string, object>;
-
-                object receivedByteDataArray;
-                if (dictObject.TryGetValue("data", out receivedByteDataArray))
-                {
-                    peripheralsList = (List<object>)receivedByteDataArray;
-                }
-            }
-
-            OnBleDidCompletePeripheralScanEvent?.Invoke(peripheralsList, errorMessage);*/
+            /* string peripheralJsonList = (errorMessage == null) ? BLEController.GetListOfDevices() : null;
+             if (peripheralJsonList != null)
+             {
+                 Dictionary<string, object> dictObject = Json.Deserialize(peripheralJsonList) as Dictionary<string, object>;
+                 object receivedByteDataArray;
+                 if (dictObject.TryGetValue("data", out receivedByteDataArray))
+                 {
+                     peripheralsList = (List<object>)receivedByteDataArray;
+                 }
+             }
+             OnBleDidCompletePeripheralScanEvent?.Invoke(peripheralsList, errorMessage);*/
         }
     }
 }
