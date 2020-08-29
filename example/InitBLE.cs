@@ -68,42 +68,49 @@ public class InitBLE
     }
 
     //STEP 5 - Init Android Class & Objects
-    public static void InitBLEFramework(string macaddress, string gameID)
+    public static void InitBLEFramework(string macaddress, int gameID)
     {
-#if UNITY_IPHONE
-                // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
-                if (Application.platform == RuntimePlatform.IPhonePlayer)
+        Debug.Log("init_ble: setting macaddress & gameID - "+macaddress+" "+gameID);
+        #if UNITY_IPHONE
+                        // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
+                        if (Application.platform == RuntimePlatform.IPhonePlayer)
+                        {
+                            _InitBLEFramework();
+                        }
+        #elif UNITY_ANDROID
+                if (Application.platform == RuntimePlatform.Android)
                 {
-                    _InitBLEFramework();
-                }
-#elif UNITY_ANDROID
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            System.Action<string> callback = ((string message) =>
-            {
-                BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
-            });
+                    System.Action<string> callback = ((string message) =>
+                    {
+                        BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
+                    });
             
-            PluginInstance.Call(macaddress, gameID, "_InitBLEFramework", new object[] { new UnityCallback(callback) });
-            if(!setGameMode(0)){
-	    	 	Debug.Log("Failed to set Game Mode. Probable reason is your game doesnt support MultiPlayer functionality yet. ");
-	    	}
-        }
-#endif
+                    PluginInstance.Call("_setMACAddress", macaddress);
+                    setGameClusterID(gameID);
+                    PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
+                    /*
+                    if(!setGameMode(0)){
+	    	 	        Debug.Log("Failed to set Game Mode. Probable reason is your game doesnt support MultiPlayer functionality yet. ");
+	    	        }
+
+                    */
+                }
+        #endif
     }
 
     
 
-    public static boolean setGameMode(int gameMode)
+    public static bool setGameMode(int gameMode)
     {
         try
         {
-            return PluginInstance.Call("_setGameMode", gameMode);
+            return PluginInstance.Call<bool>("_setGameMode", gameMode);
         }
         catch (Exception e)
         {
             Debug.Log("Exception in _setGameMode() : " + e.Message);
         }
+        return false;
     }
 
 
