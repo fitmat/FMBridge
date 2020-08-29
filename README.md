@@ -25,7 +25,7 @@ void Awake()
   //params ( String macAdress, int GameID )
     InitBLEFramework(macAddress, GameID);  
     //Add this line after Setting MacAddress
-    Boolean gameModeSet = PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1 for Singleplayer. Also method returns boolean for result
+    bool gameModeSet = PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1 for Singleplayer. Also method returns boolean for result
 }
 ```
 
