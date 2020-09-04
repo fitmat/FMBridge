@@ -113,11 +113,11 @@ public class InitBLE
         return false;
     }
 
-     public static string getGameMode()
+     public static int getGameMode()
     {
         try
         {
-            return PluginInstance.CallStatic<string>("_getGameMode");
+            return PluginInstance.CallStatic<int>("_getGameMode");
         }
         catch (Exception e)
         {
