@@ -1,7 +1,7 @@
 
 
 # FMBridge
-FMDriver Version - 0.1.24
+FMDriver Version - 0.1.25
 
 This bridge is used to connect Fitmat to your game.
 

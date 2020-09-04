@@ -113,6 +113,19 @@ public class InitBLE
         return false;
     }
 
+     public static string getGameMode()
+    {
+        try
+        {
+            return PluginInstance.CallStatic<int>("_getGameMode");
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Exception in _getGameMode() : " + e.Message);
+            return 1000;//1000 will be flagged as an invalid GameId on game side.
+        }
+    }
+
 
     public static void setGameClusterID(int gameID)
     {
