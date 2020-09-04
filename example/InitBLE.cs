@@ -117,7 +117,7 @@ public class InitBLE
     {
         try
         {
-            return PluginInstance.CallStatic<int>("_getGameMode");
+            return PluginInstance.CallStatic<string>("_getGameMode");
         }
         catch (Exception e)
         {
