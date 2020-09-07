@@ -233,24 +233,6 @@ Returns response from Driver
 
 
 
-
-```csharp
-
-//STEP 1 - Download Essentials
-//1.1 - Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
-//1.2 - Download and copy InitBLE.cs & BLEControllerEventHandler.cs and move it to {Unity_Project}\Assets\Scripts
-
-//STEP 2 - Call InitBLEFramework() in Awake() with macaddress and gameid from your controller file
-void Awake()
-{
-  //params ( String macAdress, int GameID )
-    InitBLEFramework(macAddress, GameID);  
-    //Add this line after Setting MacAddress
-    bool gameModeSet = PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1 for Singleplayer. Also method returns boolean for result
-}
-```
-
-
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
