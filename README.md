@@ -229,7 +229,6 @@ Returns response from Driver
 >**Returns**
 > JSON Object
 > Refer section 1.6
-------------------------
 
 
 
