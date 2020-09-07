@@ -1,6 +1,6 @@
 
 ## Whats new in the release - v0.1.27
-* changes in setGameMode API (Ref. section 1.7.5)
+* changes in setGameMode API (Ref. section [1.7.5](https://github.com/fitmat/FMBridge#17-api))
 
 
 # 1. ReadMe
