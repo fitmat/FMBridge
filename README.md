@@ -1,7 +1,7 @@
 
 ## Whats new in the release - v0.1.27
 * changes in setGameMode API (Ref. section [1.7.5](https://github.com/fitmat/FMBridge#17-api))
-* To incorporate the above change, replace BLEInit.cs from src folder 
+* To incorporate the above change, replace InitBLE.cs from src folder 
 
 # 1. ReadMe
 ## 1.1 What is FBridge?
