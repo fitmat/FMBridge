@@ -1,10 +1,7 @@
 
+## Whats new in the release - v0.1.27
+* changes in setGameMode API (Ref. section 1.7.5)
 
-## Whats new in the release - v0.1.26
-* Updated the reponse for Multiplayer
-* FMDriver with new communication protocol (JSON)
-* Updated internal file system for better performance and scalability
-* Updated the reponse for actions which has properties
 
 # 1. ReadMe
 ## 1.1 What is FBridge?
@@ -194,7 +191,7 @@ Sets current Game/Cluster ID
 > none
 ------------------------
 
-**5. setGameClusterID**
+**5. setGameMode**
 ```csharp
     public static void setGameMode(int gameMode)
 ```
