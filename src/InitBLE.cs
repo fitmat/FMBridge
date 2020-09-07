@@ -100,17 +100,16 @@ public class InitBLE
 
     
 
-    public static bool setGameMode(int gameMode)
+    public static void setGameMode(int gameMode)
     {
         try
         {
-            return PluginInstance.Call<bool>("_setGameMode", gameMode);
+            PluginInstance.Call("_setGameMode", gameMode);
         }
         catch (Exception e)
         {
             Debug.Log("Exception in _setGameMode() : " + e.Message);
         }
-        return false;
     }
 
      public static int getGameMode()

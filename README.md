@@ -1,66 +1,22 @@
 
 
-# FMBridge
-FMDriver Version - 0.1.25
-
-This bridge is used to connect Fitmat to your game.
-
-## Whats new in the release
+## Whats new in the release - v0.1.26
 * Updated the reponse for Multiplayer
 * FMDriver with new communication protocol (JSON)
 * Updated internal file system for better performance and scalability
 * Updated the reponse for actions which has properties
 
-## Usage
+# 1. ReadMe
+## 1.1 What is FBridge?
+This Fitmat-Bridge (FMBRidge) is used to integrate mat to Game-Lib. It uses AAR (Android Archives) as a dependency.
 
-```csharp
+## 1.2 Prerequisites
+Before you get started with the FMBridge, you will require following already being set-up,
+* Setup Game-Lib
+> Follow this link to setup [Game-Lib](https://docs.google.com/document/d/1AwyTtxGk5f9h4P64m0oODx_-3z-4Dn0qmZ4YlnmbGsQ/edit)
 
-//STEP 1 - Download Essentials
-//1.1 - Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
-//1.2 - Download and copy InitBLE.cs & BLEControllerEventHandler.cs and move it to {Unity_Project}\Assets\Scripts
-
-//STEP 2 - Call InitBLEFramework() in Awake() with macaddress and gameid from your controller file
-void Awake()
-{
-  //params ( String macAdress, int GameID )
-    InitBLEFramework(macAddress, GameID);  
-    //Add this line after Setting MacAddress
-    bool gameModeSet = PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1 for Singleplayer. Also method returns boolean for result
-}
-```
-
-## Code changes
- 1. Change in driverPath in InitBLE.cs (GameLib)
-```csharp 
-//Change this
-const string driverPathName = "com.fitmat.fitmatdriver.Connection.DeviceControlActivity";
-
-//Tothis
-const string driverPathName = "com.fitmat.fitmatdriver.Producer.Connection.DeviceControlActivity";
-```
- 2. Update FMReponse parsing 
-```csharp 
-//Change this
-string FMResponse = InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
-Debug.Log("UNITY FMResponse: " + FMResponse);
-string[] FMTokens = FMResponse.Split('.');
-Debug.Log("UNITY FMTokens: " + FMTokens[0]);
-
-//Tothis
-string FMResponse = InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
-//TODO JSON Parser - Follow below JSON format and parse accordingly
-```
- 3. For Multiplayer
-```csharp 
-
-//Add this line after Setting MacAddress
-PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1 for Singleplayer
-
-//For singleplayer calling this method is not necessary 
-
-```
-## Game Identifier Table
-
+## 1.3 Identifier Tables
+### 1. Game Identifier Table 
 |   Game Name   |   Game ID   |                Action In the Game             |
 |---------------|-------------|-----------------------------------------------|
 | Joyfull Jumps |      1      | Running, Running Stopped, Jumping             |
@@ -68,9 +24,56 @@ PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1
 | Egg Catcher   |      2      | Left Move, Right Move, Jumping                |
 | Skater        |      3      | Jump In, Jump Out                             |
 
+### 2. Action Identifier Table 
+| Action Name       |   Action ID   | 
+|---------------------|-------------|
+| Left| 9GO5  |
+| Right| 3KWN  |
+| Enter| PLW3 |
+| Pause| UDH0 |
+| Running  | SWLO   |
+| Running Stopped | 7RCE  | 
+| Jump   | 9D6O |
+| Right Move | DMEY | 
+| Left Move | 38UF | 
+| Jump In | EUOA| 
+| Jump Out| QRTY | 
+
+## 1.4 Installation
+
+* Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
+* Download and copy InitBLE.cs & BLEControllerEventHandler.cs and move it to {Unity_Project}\Assets\Scripts
+> Please find all files under [src](https://github.com/fitmat/FMBridge/src) folder
+
+## 1.5 Getting Started
+The below methods are called only once throughout game and are used to initialize of the FMBridge & Driver.
+1.  Call InitBLEFramework(). Usually call in Awake() with mac-address and game-id 
+```csharp
+//SOMETHING LIKE THIS
+void Awake()
+{
+    //params ( String macAdress, int GameID )
+    InitBLE.InitBLEFramework(macAddress, GameID);      
+}
+```
+> NOTE : Call it only once throughout game
+
+<br>
+
+2. Call setGameMode() to set game mode to SINGLE or MULTI player
+
+```csharp
+   //params ( int gameMode)
+   //gameMode = 0 - Multiplaye
+   //gameMode = 1 - Singleplayer.
+   InitBLE.setGameMode(gameMode);
+```
+> NOTE : Call setGameMode only after setting Mac-Address and Call it only once throughout game
 
 
-## New Protocol for Communication 
+## 1.6 Communication Protocol
+This is the JSON response you will receive when ***_getFMResponse*** (Refer section 1.7.6) is called.
+
 ```python
 ######## FOR SINGLE PLAYER ########
 {
@@ -115,43 +118,124 @@ PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1
 }
 ```
 
+## 1.7 API                             
+
+**1. getFMDriverVersion**
+```csharp
+   public static string getFMDriverVersion()
+```
+Returns Driver's Version number
+>**Type**
+>Optional
+
+>**Class**
+>InItBLE
+
+>**Param**
+>None
+
+>**Returns**
+> string
+
+------------------------
+
+**2. getGameClusterID**
+```csharp
+   public static int getGameClusterID()
+```
+Returns current Game/Cluster ID
+>**Type**
+>Optional
+
+>**Class**
+>InItBLE
+
+>**Param**
+>None
+
+>**Returns**
+> int
+------------------------
+
+**3. getGameMode**
+```csharp
+   public static int getGameMode()
+```
+Returns current Game mode
+>**Type**
+>Optional
+
+>**Class**
+>InItBLE
+
+>**Param**
+>None 
+
+>**Returns**
+> int
+------------------------
+
+**4. setGameClusterID**
+```csharp
+   public static void setGameClusterID(int gameID)
+```
+Sets current Game/Cluster ID
+>**Type**
+>Mandatory
+
+>**Class**
+>InItBLE
+
+>**Param**
+>gameID
+>Refer Game Identifier Table for available gameID
+
+>**Returns**
+> none
+------------------------
+
+**5. setGameClusterID**
+```csharp
+    public static void setGameMode(int gameMode)
+```
+Sets current Game Mode
+>**Type**
+>Mandatory
+
+>**Class**
+>InItBLE
+
+>**Param**
+>gameMode 
+>0 - MULTI_PLAYER
+>1 - SINGLE_PLAYER
+
+>**Returns**
+> none
+------------------------
 
 
-## Game Identifier Table
+**6. _getFMResponse**
+```csharp
+    InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
+```
+Returns response from Driver
+>**Type**
+>Mandatory
 
-|   Action Name       |   Action ID   | 
-|---------------------|-------------|
-| Left| 9GO5  |
-| Right| 3KWN  |
-| Enter| PLW3 |
-| Pause| UDH0 |
-| Running  | SWLO   |
-| Running Stopped | 7RCE  | 
-| Jump   | 9D6O |
-| Right Move | DMEY | 
-| Left Move | 38UF | 
-| Jump In | EUOA| 
-| Jump Out| QRTY | 
+>**Class**
+>InItBLE
 
+>**Param**
+>none
 
-
-
-## Download
-
-Add these files to your project to get started.
-
-[BLEControllerEventHandler](https://github.com/fitmat/FMBridge/blob/master/example/BLEControllerEventHandler.cs) - Add to your scripts
-
-[InitBLE](https://github.com/fitmat/FMBridge/blob/master/example/InitBLE.cs) - Add to your scripts
+>**Returns**
+> JSON Object
+> Refer section 1.6
+------------------------
 
 
-## Example
 
-Visit example folder to check sample project files and usage
-[example](https://github.com/fitmat/FMBridge/blob/master/example/)
-
-
-## Usage
 
 ```csharp
 
@@ -159,13 +243,16 @@ Visit example folder to check sample project files and usage
 //1.1 - Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
 //1.2 - Download and copy InitBLE.cs & BLEControllerEventHandler.cs and move it to {Unity_Project}\Assets\Scripts
 
-//STEP 2 - Call InitBLEFramework() in Awake() with macaddress and gameid
+//STEP 2 - Call InitBLEFramework() in Awake() with macaddress and gameid from your controller file
 void Awake()
 {
-	//params ( String macAdress, int GameID )
+  //params ( String macAdress, int GameID )
     InitBLEFramework(macAddress, GameID);  
+    //Add this line after Setting MacAddress
+    bool gameModeSet = PluginInstance.Call("_setGameMode", gameMode); //gameMode = 0 for Multiplayer, 1 for Singleplayer. Also method returns boolean for result
 }
 ```
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -174,3 +261,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
