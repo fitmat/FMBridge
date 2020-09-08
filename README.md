@@ -1,4 +1,8 @@
 
+## Whats new in the release - v0.1.28
+* Internal logging. Now testor can better understand FMResponse log. Insert "I/FMResponse" in search bar
+* Added new Game ID - Penguin Pop (Refere section 1.3.1)
+
 ## Whats new in the release - v0.1.27
 * changes in setGameMode API (Ref. section [1.7.5](https://github.com/fitmat/FMBridge#17-api))
 * To incorporate the above change, replace InitBLE.cs from src folder 
@@ -16,10 +20,11 @@ Before you get started with the FMBridge, you will require following already bei
 ### 1. Game Identifier Table 
 |   Game Name   |   Game ID   |                Action In the Game             |
 |---------------|-------------|-----------------------------------------------|
-| Joyfull Jumps |      1      | Running, Running Stopped, Jumping             |
-| Yipli Runner  |      2      | Left Move, Right Move, Jumping                |
-| Egg Catcher   |      2      | Left Move, Right Move, Jumping                |
+| Joyfull Jumps |      1      | Running, Running Stopped, Jump                |
+| Yipli Runner  |      2      | Left Move, Right Move, Jump                   |
+| Egg Catcher   |      2      | Left Move, Right Move, Jump                   |
 | Skater        |      3      | Jump In, Jump Out                             |
+| Penguin Pop   |      4      | Jump                                          |
 
 ### 2. Action Identifier Table 
 | Action Name       |   Action ID   | 
