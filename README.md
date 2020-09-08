@@ -1,7 +1,7 @@
 
 ## Whats new in the release - v0.1.28
-* Internal logging. Now testor can better understand FMResponse log. Insert "I/FMResponse" in search bar
-* Added new Game ID - Penguin Pop (Refere section 1.3.1)
+* Internal logging. Now tester can better understand FMResponse log. Insert "I/FMResponse" in search bar ( helpful for @Nachiket @Lalita )
+* Added new Game ID - Penguin Pop (Refer section 1.3.1)
 
 ## Whats new in the release - v0.1.27
 * changes in setGameMode API (Ref. section [1.7.5](https://github.com/fitmat/FMBridge#17-api))
