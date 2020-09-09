@@ -3,7 +3,7 @@
 * Added switching algorithm from SP to MP and vice versa
 * Gaming team can call setGameMode (Ref. section [1.7.5](https://github.com/fitmat/FMBridge#17-api)) whenever they need to switch player-mode 
 * In this build setGameMode can be called multiple time just like setClusterID() API
-* Added supprt for new games/liveclass actions. Please refer to Game Identifier & Action Identifier table
+* Added support for new games/liveclass actions. Please refer to Game Identifier & Action Identifier table
 
 ## Whats new in the release - v0.1.28
 * Internal logging. Now tester can better understand FMResponse log. Insert "I/FMResponse" in search bar ( helpful for @Nachiket @Lalita )
