@@ -1,4 +1,10 @@
 
+## Whats new in the release - v0.1.29
+* Added switching algorithm from SP to MP and vice versa
+* Gaming team can call setGameMode (Ref. section [1.7.5](https://github.com/fitmat/FMBridge#17-api)) whenever they need to switch player-mode 
+* In this build setGameMode can be called multiple time just like setClusterID() API
+* Added supprt for new games/liveclass actions. Please refer to Game Identifier & Action Identifier table
+
 ## Whats new in the release - v0.1.28
 * Internal logging. Now tester can better understand FMResponse log. Insert "I/FMResponse" in search bar ( helpful for @Nachiket @Lalita )
 * Added new Game ID - Penguin Pop (Refer section 1.3.1)
@@ -18,28 +24,103 @@ Before you get started with the FMBridge, you will require following already bei
 
 ## 1.3 Identifier Tables
 ### 1. Game Identifier Table 
-|   Game Name   |   Game ID   |                Action In the Game             |
-|---------------|-------------|-----------------------------------------------|
-| Joyfull Jumps |      1      | Running, Running Stopped, Jump                |
-| Yipli Runner  |      2      | Left Move, Right Move, Jump                   |
-| Egg Catcher   |      2      | Left Move, Right Move, Jump                   |
-| Skater        |      3      | Jump In, Jump Out                             |
-| Penguin Pop   |      4      | Jump                                          |
+|   Game Name            | Game ID|             Action Name in the Game             |
+|------------------------|--------|-------------------------------------------------|
+| JOYFULL JUMPS          |    1   | Running, Running Stopped, Jump                  |
+| YIPLI RUNNER           |    2   | Left Move, Right Move, Jump                     |
+| EGG CATCHER            |    3   | Left Move, Right Move, Jump                     |
+| SKATERS                |    3   | Jump In, Jump Out                               |
+| PENGUIN POP            |    4   | Jump                                            |
+| BASIC1                 | LCK_01 | Running, Running Stopped, High Knee, Skier Jack |
+| BASIC2                 | LCK_02 | Running, Running Stopped                        |
+| BASIC3                 | LCK_03 | High Knee                                       |
+| BASIC4                 | LCK_04 | Skier Jack                                      |
+| JUMPING                | LCK_05 | Jump                                            |
+| JUMPING JACK           | LCK_06 | Jumping Jack                                    |
+| NINJA KICKS            | LCK_07 | Ninja Kick                                      |
+| FORWARD BACKWARD JUMPS | LCK_08 | Forward Jump, Backward Jump                     |
+| HOP SCOTCH             | LCK_09 | Hopscotch                                       |
+| SIDEWISE JUMPS         | LCK_10 | Right Jump, Left Jump                           |
+| ONE LEG HOPPING        | LCK_11 | R Leg Hopping, L Leg Hopping                    |
+| DIAGONAL JUMPS         | LCK_12 | Diagonal Jump                                   |
+| STAR JUMPS             | LCK_13 | Star Jump                                       |
+| CHEST JUMPS            | LCK_14 | Chest Jump                                      |
+| CROSS OVER JACK        | LCK_15 | Crossover JJ                                    |
+| SQUAT AND KICK         | LCK_16 | Squat & Kick                                    |
+| 180 JUMPS              | LCK_17 | 180 Jumps                                       |
+| SQUAT AND JUMP         | LCK_18 | Squat & Jump                                    |
+| MOUNTAIN CLIMBING      | LCK_19 | Mountain Climbing                               |
+| 180 SQUAT              | LCK_20 | 180 Squats                                      |
+| MULE KICK              | LCK_21 | Mule Kick                                       |
+| JUMPING JACK AND SQUAT | LCK_22 | Squat & JJ                                      |
+| LATERAL SQUAT JUMP     | LCK_23 | Lateral Squats                                  |
+| PLANK JUMP IN          | LCK_24 | Plank Jump Ins                                  |
+| LUNGES RUN             | LCK_25 | Lunges Run                                      |
+| BURPEES                | LCK_26 | Burpee                                          |
+| MALASANA               | LCK_27 | Malasana                                        |
+| SINGLE LEG BALANCE     | LCK_28 | Balance Started, Balance Stopped                |
+| 3 LEG DOG              | LCK_29 | 3 Leg Dog                                       |
+| BANARSANA              | LCK_30 | Banarsana                                       |
+| AEROPLANE POSE         | LCK_31 | Aeroplane pose                                  |
+| VIKRASANA              | LCK_32 | Vikrasana                                       |
+| BASIC PLANK            | LCK_33 | Basic plank                                     |
+| ARDHA CHANDRASANA      | LCK_34 | Ardha Chandrasana                               |
+| PLANK ONE ARM HOLD     | LCK_35 | 1-Arm Started, 1-Arm Stopped                    |
 
 ### 2. Action Identifier Table 
 | Action Name       |   Action ID   | 
-|---------------------|-------------|
-| Left| 9GO5  |
-| Right| 3KWN  |
-| Enter| PLW3 |
-| Pause| UDH0 |
-| Running  | SWLO   |
-| Running Stopped | 7RCE  | 
-| Jump   | 9D6O |
-| Right Move | DMEY | 
-| Left Move | 38UF | 
-| Jump In | EUOA| 
-| Jump Out| QRTY | 
+|-------------------|---------------|
+| Left              | 9GO5          |
+| Right             | 3KWN          |   
+| Enter             | PLW3          |
+| Pause             | UDH0          |
+| Running           | SWLO          |
+| Running Stopped   | 7RCE          | 
+| Jump              | 9D6O          |
+| Right Move        | DMEY          | 
+| Left Move         | 38UF          | 
+| Jump In           | EUOA          | 
+| Jump Out          | QRTY          | 
+| Jumping Jack      | 99XR          |
+| Skier Jack        | NWCH          |
+| Crossover JJ      | VUFO          |
+| Lunges Run        | 386I          |
+| Mountain Climbing | BGM4          |
+| Plank Started     | 58GH          |
+| Plank Stopped     | 0DLA          |
+| Mule Kick         | WBUT          |
+| R Leg Hopping     | 3DIN          |
+| L Leg Hopping     | 3DI1          |
+| Burpee            | FN1S          |
+| 180 Jumps         | V56G          |
+| Diagonal Jump     | 6JJR          |
+| Forward Jump      | UJ3J          |
+| Backward Jump     | U10J          |
+| Right Jump        | B8X7          |
+| Left Jump         | 18X7          |
+| Star Jump         | LPM0          |
+| Chest Jump        | JASL          |
+| Hopscotch         | U8W2          |
+| Balance Started   | UWC6          |
+| Balance Stopped   | 1WC1          |
+| 1-Arm Started     | ISJD          |
+| 1-Arm Stopped     | EJ02          |
+| Ninja Kick        | 90DM          |
+| High Knee         | HXCQ          |
+| 180 Squats        | FYN1          |
+| Squat & Jump      | 6CTM          |
+| Squat & Kick      | E0CB          |
+| Squats            | OYMP          |
+| Squat & JJ        | O12U          |
+| Lateral Squats    | X5IW          |
+| Plank Jump Ins    | WBTW          |
+| 3 Leg Dog         | 8G3J          |
+| Banarsana         | UWHX          |
+| Aeroplane pose    | Not Developed |
+| Vikrasana         | Not Developed |
+| Ardha Chandrasana | 3JCQ          |
+| Malasana          | 3J11          |
+
 
 ## 1.4 Installation
 
@@ -48,7 +129,7 @@ Before you get started with the FMBridge, you will require following already bei
 > Please find all files under [src](https://github.com/fitmat/FMBridge/src) folder
 
 ## 1.5 Getting Started
-The below methods are called only once throughout game and are used to initialize of the FMBridge & Driver.
+The below methods are used to initialize of the FMBridge & Driver.
 1.  Call InitBLEFramework(). Usually call in Awake() with mac-address and game-id 
 ```csharp
 //SOMETHING LIKE THIS
@@ -70,7 +151,7 @@ void Awake()
    //gameMode = 1 - Singleplayer.
    InitBLE.setGameMode(gameMode);
 ```
-> NOTE : Call setGameMode only after setting Mac-Address and Call it only once throughout game
+> NOTE : Call setGameMode only after setting Mac-Address and it can be called multiple times
 
 
 ## 1.6 Communication Protocol
