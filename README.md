@@ -28,7 +28,8 @@ Before you get started with the FMBridge, you will require following already bei
 |------------------------|--------|-------------------------------------------------|
 | JOYFULL JUMPS          |    1   | Running, Running Stopped, Jump                  |
 | YIPLI RUNNER           |    2   | Left Move, Right Move, Jump                     |
-| EGG CATCHER            |    3   | Left Move, Right Move, Jump                     |
+| EGG CATCHER            |    2   | Left Move, Right Move, Jump                     |
+| TREE WARRIOR           |    2   | Left Move, Right Move, Jump                     |
 | SKATERS                |    3   | Jump In, Jump Out                               |
 | PENGUIN POP            |    4   | Jump                                            |
 | BASIC1                 |   201  | Running, Running Stopped, High Knee, Skier Jack |
