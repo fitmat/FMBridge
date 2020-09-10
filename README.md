@@ -26,6 +26,7 @@ Before you get started with the FMBridge, you will require following already bei
 ### 1. Game Identifier Table 
 |   Game Name            | Game ID|             Action Name in the Game             |
 |------------------------|--------|-------------------------------------------------|
+| MAT CONTROLS           |    0   | Left, Right, Enter                              |
 | JOYFULL JUMPS          |    1   | Running, Running Stopped, Jump                  |
 | YIPLI RUNNER           |    2   | Left Move, Right Move, Jump                     |
 | EGG CATCHER            |    2   | Left Move, Right Move, Jump                     |
