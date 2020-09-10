@@ -31,41 +31,41 @@ Before you get started with the FMBridge, you will require following already bei
 | EGG CATCHER            |    3   | Left Move, Right Move, Jump                     |
 | SKATERS                |    3   | Jump In, Jump Out                               |
 | PENGUIN POP            |    4   | Jump                                            |
-| BASIC1                 | LCK_01 | Running, Running Stopped, High Knee, Skier Jack |
-| BASIC2                 | LCK_02 | Running, Running Stopped                        |
-| BASIC3                 | LCK_03 | High Knee                                       |
-| BASIC4                 | LCK_04 | Skier Jack                                      |
-| JUMPING                | LCK_05 | Jump                                            |
-| JUMPING JACK           | LCK_06 | Jumping Jack                                    |
-| NINJA KICKS            | LCK_07 | Ninja Kick                                      |
-| FORWARD BACKWARD JUMPS | LCK_08 | Forward Jump, Backward Jump                     |
-| HOP SCOTCH             | LCK_09 | Hopscotch                                       |
-| SIDEWISE JUMPS         | LCK_10 | Right Jump, Left Jump                           |
-| ONE LEG HOPPING        | LCK_11 | R Leg Hopping, L Leg Hopping                    |
-| DIAGONAL JUMPS         | LCK_12 | Diagonal Jump                                   |
-| STAR JUMPS             | LCK_13 | Star Jump                                       |
-| CHEST JUMPS            | LCK_14 | Chest Jump                                      |
-| CROSS OVER JACK        | LCK_15 | Crossover JJ                                    |
-| SQUAT AND KICK         | LCK_16 | Squat & Kick                                    |
-| 180 JUMPS              | LCK_17 | 180 Jumps                                       |
-| SQUAT AND JUMP         | LCK_18 | Squat & Jump                                    |
-| MOUNTAIN CLIMBING      | LCK_19 | Mountain Climbing                               |
-| 180 SQUAT              | LCK_20 | 180 Squats                                      |
-| MULE KICK              | LCK_21 | Mule Kick                                       |
-| JUMPING JACK AND SQUAT | LCK_22 | Squat & JJ                                      |
-| LATERAL SQUAT JUMP     | LCK_23 | Lateral Squats                                  |
-| PLANK JUMP IN          | LCK_24 | Plank Jump Ins                                  |
-| LUNGES RUN             | LCK_25 | Lunges Run                                      |
-| BURPEES                | LCK_26 | Burpee                                          |
-| MALASANA               | LCK_27 | Malasana                                        |
-| SINGLE LEG BALANCE     | LCK_28 | Balance Started, Balance Stopped                |
-| 3 LEG DOG              | LCK_29 | 3 Leg Dog                                       |
-| BANARSANA              | LCK_30 | Banarsana                                       |
-| AEROPLANE POSE         | LCK_31 | Aeroplane pose                                  |
-| VIKRASANA              | LCK_32 | Vikrasana                                       |
-| BASIC PLANK            | LCK_33 | Basic plank                                     |
-| ARDHA CHANDRASANA      | LCK_34 | Ardha Chandrasana                               |
-| PLANK ONE ARM HOLD     | LCK_35 | 1-Arm Started, 1-Arm Stopped                    |
+| BASIC1                 |   201  | Running, Running Stopped, High Knee, Skier Jack |
+| BASIC2                 |   202  | Running, Running Stopped                        |
+| BASIC3                 |   203  | High Knee                                       |
+| BASIC4                 |   204  | Skier Jack                                      |
+| JUMPING                |   205  | Jump                                            |
+| JUMPING JACK           |   206  | Jumping Jack                                    |
+| NINJA KICKS            |   207  | Ninja Kick                                      |
+| FORWARD BACKWARD JUMPS |   208  | Forward Jump, Backward Jump                     |
+| HOP SCOTCH             |   209  | Hopscotch                                       |
+| SIDEWISE JUMPS         |   210  | Right Jump, Left Jump                           |
+| ONE LEG HOPPING        |   211  | R Leg Hopping, L Leg Hopping                    |
+| DIAGONAL JUMPS         |   212  | Diagonal Jump                                   |
+| STAR JUMPS             |   213  | Star Jump                                       |
+| CHEST JUMPS            |   214  | Chest Jump                                      |
+| CROSS OVER JACK        |   215  | Crossover JJ                                    |
+| SQUAT AND KICK         |   216  | Squat & Kick                                    |
+| 180 JUMPS              |   217  | 180 Jumps                                       |
+| SQUAT AND JUMP         |   218  | Squat & Jump                                    |
+| MOUNTAIN CLIMBING      |   219  | Mountain Climbing                               |
+| 180 SQUAT              |   220  | 180 Squats                                      |
+| MULE KICK              |   221  | Mule Kick                                       |
+| JUMPING JACK AND SQUAT |   222  | Squat & JJ                                      |
+| LATERAL SQUAT JUMP     |   223  | Lateral Squats                                  |
+| PLANK JUMP IN          |   224  | Plank Jump Ins                                  |
+| LUNGES RUN             |   225  | Lunges Run                                      |
+| BURPEES                |   226  | Burpee                                          |
+| MALASANA               |   227  | Malasana                                        |
+| SINGLE LEG BALANCE     |   228  | Balance Started, Balance Stopped                |
+| 3 LEG DOG              |   229  | 3 Leg Dog                                       |
+| BANARSANA              |   230  | Banarsana                                       |
+| AEROPLANE POSE         |   231  | Aeroplane pose                                  |
+| VIKRASANA              |   232  | Vikrasana                                       |
+| BASIC PLANK            |   233  | Basic plank                                     |
+| ARDHA CHANDRASANA      |   234  | Ardha Chandrasana                               |
+| PLANK ONE ARM HOLD     |   235  | 1-Arm Started, 1-Arm Stopped                    |
 
 ### 2. Action Identifier Table 
 | Action Name       |   Action ID   | 
