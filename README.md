@@ -1,7 +1,7 @@
 
 ## Whats new in the release - v0.1.30
 * Added FMResponse log for Single Player. Earlier was only for MP.
-* Now every game seesion you play, A folder called "GAME-LOGS" will be created and inside it you can find a folder with Data & Time which contains "FMData.txt"
+* Now every game session you play, A folder called "GAME-LOGS" will be created and inside it you can find a folder with Data & Time which contains "FMData.txt"
 * This FMData.txt will be used for MP Accuracy Analysis
 * No changes on game or game-lib side needed
 
