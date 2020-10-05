@@ -127,12 +127,18 @@ Before you get started with the FMBridge, you will require following already bei
 
 
 ## 1.4 Installation
-
+#### *Android*
 * Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
 * Download and copy InitBLE.cs & BLEControllerEventHandler.cs and move it to {Unity_Project}\Assets\Scripts
 > Please find all files under [src](https://github.com/fitmat/FMBridge/src) folder
 
+#### *Windows*
+* Download and copy PCFitmatDriver folder and move it to {Unity_Project}\Assets\Plugins\Windows
+* Download and copy InitBLE.cs and move it to {Unity_Project}\Assets\Scripts
+> Please find all files under [src](https://github.com/fitmat/FMBridge/src) folder
+
 ## 1.5 Getting Started
+#### *Android* 
 The below methods are used to initialize of the FMBridge & Driver.
 1.  Call InitBLEFramework(). Usually call in Awake() with mac-address and game-id 
 ```csharp
@@ -155,6 +161,19 @@ void Awake()
    //gameMode = 1 - Singleplayer.
    InitBLE.setGameMode(gameMode);
 ```
+
+
+#### *Windows*
+1.  Call InitPCFramework(). Usually call in Awake() with mac-address and game-id 
+```csharp
+//SOMETHING LIKE THIS
+void Awake()
+{
+    //params (int GameID )
+    InitBLE.InitPCFramework(GameID);      
+}
+```
+
 > NOTE : Call setGameMode only after setting Mac-Address and it can be called multiple times
 
 
