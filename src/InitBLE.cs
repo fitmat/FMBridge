@@ -7,6 +7,7 @@ public class InitBLE
     const string driverPathName = "com.fitmat.fitmatdriver.Producer.Connection.DeviceControlActivity";
     string FMResponseCount = "";
     static string BLEStatus = "";
+    DeviceControlActivity d = new DeviceControlActivity();
     //STEP 3 - Create Unity Callback class
     class UnityCallback : AndroidJavaProxy
     {
@@ -95,7 +96,15 @@ public class InitBLE
 
                     */
                 }
-        #endif
+        
+        //TODO - Windows
+        /*
+        d._InitPCFramework("", 1);
+        //param 1 - none
+        //param 2 - game mode
+
+        //To set Game add #id UNITY WINDOWS in setGameMode methid and call DeviceControlActivity._setGameID(gameID)
+        */
     }
 
     
