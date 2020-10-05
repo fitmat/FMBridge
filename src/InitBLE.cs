@@ -104,6 +104,8 @@ public class InitBLE
         //param 2 - game mode
 
         //To set Game add #id UNITY WINDOWS in setGameMode methid and call DeviceControlActivity._setGameID(gameID)
+
+        //To get FMResponse call DeviceControlActivity._getFMResponse();
         */
     }
 
