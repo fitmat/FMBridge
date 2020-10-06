@@ -97,14 +97,15 @@ public class InitBLE
                     */
                 }
         
-        //TODO - Windows
+        
         /*
-        d._InitPCFramework(1);
-        //param 1 - game ID
+            //TODO - Windows
+            d._InitPCFramework(1);
+            //param 1 - game ID
 
-        //To set Game add #id UNITY WINDOWS in setGameMode methid and call DeviceControlActivity._setGameID(gameID)
+            //To set Game add #id UNITY WINDOWS in setGameMode methid and call DeviceControlActivity._setGameID(gameID)
 
-        //To get FMResponse call DeviceControlActivity._getFMResponse();
+            //To get FMResponse call DeviceControlActivity._getFMResponse();
         */
     }
 
@@ -160,6 +161,7 @@ public class InitBLE
             return 1000;//1000 will be flagged as an invalid GameId on game side.
         }
     }
+
 
     public static string getFMDriverVersion()
     {

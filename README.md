@@ -1,4 +1,8 @@
 
+## Whats new in the release - v0.1.31
+* Removed TXT Logger (No Change in game)
+* Added new Jump In-Out algortihm  (No Change in game)
+
 ## Whats new in the release - v0.1.30
 * Added FMResponse log for Single Player. Earlier was only for MP.
 * Now every game session you play, A folder called "GAME-LOGS" will be created and inside it you can find a folder with Data & Time which contains "FMData.txt"
@@ -11,9 +15,6 @@
 * In this build setGameMode can be called multiple time just like setClusterID() API
 * Added support for new games/liveclass actions. Please refer to Game Identifier & Action Identifier table
 
-## Whats new in the release - v0.1.28
-* Internal logging. Now tester can better understand FMResponse log. Insert "I/FMResponse" in search bar ( helpful for @Nachiket @Lalita )
-* Added new Game ID - Penguin Pop (Refer section 1.3.1)
 
 # 1. ReadMe
 ## 1.1 What is FBridge?
