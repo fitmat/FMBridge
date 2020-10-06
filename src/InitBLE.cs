@@ -99,9 +99,8 @@ public class InitBLE
         
         //TODO - Windows
         /*
-        d._InitPCFramework("", 1);
-        //param 1 - none
-        //param 2 - game mode
+        d._InitPCFramework(1);
+        //param 1 - game ID
 
         //To set Game add #id UNITY WINDOWS in setGameMode methid and call DeviceControlActivity._setGameID(gameID)
 
