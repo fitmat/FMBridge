@@ -1,3 +1,4 @@
+using com.fitmat.fitmatdriver.Producer.Connection;
 using System;
 using UnityEngine;
 public class InitBLE
@@ -7,7 +8,6 @@ public class InitBLE
     const string driverPathName = "com.fitmat.fitmatdriver.Producer.Connection.DeviceControlActivity";
     string FMResponseCount = "";
     static string BLEStatus = "";
-    DeviceControlActivity d = new DeviceControlActivity();
     //STEP 3 - Create Unity Callback class
     class UnityCallback : AndroidJavaProxy
     {
@@ -38,6 +38,17 @@ public class InitBLE
             initializeHandler?.Invoke(message);
         }
     }
+
+    public static string GetFMResponse()
+    {
+        return DeviceControlActivity._getFMResponse();
+//#if UNITY_ANDROID
+//        return InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
+//#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+//        return DeviceControlActivity._getFMResponse();
+//#endif
+    }
+
     //STEP 4 - Init Android Class & Objects
     public static AndroidJavaClass PluginClass
     {
@@ -71,51 +82,47 @@ public class InitBLE
     //STEP 5 - Init Android Class & Objects
     public static void InitBLEFramework(string macaddress, int gameID)
     {
-        Debug.Log("init_ble: setting macaddress & gameID - "+macaddress+" "+gameID);
+        Debug.Log("init_ble: setting macaddress & gameID - " + macaddress + " " + gameID);
         #if UNITY_IPHONE
-                        // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
-                        if (Application.platform == RuntimePlatform.IPhonePlayer)
-                        {
-                            _InitBLEFramework();
-                        }
+            // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                _InitBLEFramework();
+            }
         #elif UNITY_ANDROID
-                if (Application.platform == RuntimePlatform.Android)
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                System.Action<string> callback = ((string message) =>
                 {
-                    System.Action<string> callback = ((string message) =>
-                    {
-                        BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
-                    });
-            
-                    PluginInstance.Call("_setMACAddress", macaddress);
-                    setGameClusterID(gameID);
-                    PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
-                    /*
-                    if(!setGameMode(0)){
-	    	 	        Debug.Log("Failed to set Game Mode. Probable reason is your game doesnt support MultiPlayer functionality yet. ");
-	    	        }
+                    BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
+                });
 
-                    */
+                PluginInstance.Call("_setMACAddress", macaddress);
+                setGameClusterID(gameID);
+                PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
+                /*
+                if(!setGameMode(0)){
+                    Debug.Log("Failed to set Game Mode. Probable reason is your game doesnt support MultiPlayer functionality yet. ");
                 }
-        
-        
-        /*
-            //TODO - Windows
-            d._InitPCFramework(1);
-            //param 1 - game ID
-
-            //To set Game add #id UNITY WINDOWS in setGameMode methid and call DeviceControlActivity._setGameID(gameID)
-
-            //To get FMResponse call DeviceControlActivity._getFMResponse();
-        */
+                */
+            }
+        #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+            Debug.Log("Calling DeviceControlActivity.InitPCFramework()");
+            DeviceControlActivity.InitPCFramework(gameID);
+        #endif
     }
 
-    
+
 
     public static void setGameMode(int gameMode)
     {
         try
         {
-            PluginInstance.Call("_setGameMode", gameMode);
+            #if UNITY_ANDROID
+                PluginInstance.Call("_setGameMode", gameMode);
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                DeviceControlActivity._setGameMode(gameMode);
+            #endif    
         }
         catch (Exception e)
         {
@@ -123,11 +130,15 @@ public class InitBLE
         }
     }
 
-     public static int getGameMode()
+    public static int getGameMode()
     {
         try
         {
-            return PluginInstance.CallStatic<int>("_getGameMode");
+            #if UNITY_ANDROID
+                return PluginInstance.CallStatic<int>("_getGameMode");
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                return DeviceControlActivity._getGameMode();
+            #endif
         }
         catch (Exception e)
         {
@@ -141,7 +152,11 @@ public class InitBLE
     {
         try
         {
-            PluginInstance.Call("_setGameID", gameID);
+            #if UNITY_ANDROID
+                PluginInstance.Call("_setGameID", gameID);
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                DeviceControlActivity._setGameID(gameID);
+            #endif
         }
         catch (Exception e)
         {
@@ -153,7 +168,11 @@ public class InitBLE
     {
         try
         {
-            return PluginInstance.CallStatic<int>("_getGameID");
+            #if UNITY_ANDROID
+                return PluginInstance.CallStatic<int>("_getGameID");
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                return DeviceControlActivity._getGameID();
+            #endif         
         }
         catch (Exception e)
         {
@@ -162,12 +181,15 @@ public class InitBLE
         }
     }
 
-
     public static string getFMDriverVersion()
     {
         try
         {
-            return PluginInstance.CallStatic<string>("_getDriverVersion");
+            #if UNITY_ANDROID
+                return PluginInstance.CallStatic<string>("_getDriverVersion");
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                return DeviceControlActivity._getDriverVersion();
+            #endif
         }
         catch (Exception exp)
         {
