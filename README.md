@@ -343,10 +343,10 @@ Returns response from Driver
 
 
 **7. _IsDeviceConnected**
-### ONLY FOR WINDOWS
 ```csharp
     public int void _IsDeviceConnected() 
 ```
+ONLY FOR WINDOWS
 Returns current Game mode
 >**Type**
 >Optional
