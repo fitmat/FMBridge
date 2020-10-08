@@ -342,6 +342,28 @@ Returns response from Driver
 
 
 
+**7. _IsDeviceConnected**
+### ONLY FOR WINDOWS
+```csharp
+    public int void _IsDeviceConnected() 
+```
+Returns current Game mode
+>**Type**
+>Optional
+
+>**Class**
+>DeviceControlActivity
+
+>**Param**
+>None 
+
+>**Returns**
+> int
+
+
+
+
+
 ## 1.8 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
