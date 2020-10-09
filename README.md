@@ -348,7 +348,7 @@ Returns response from Driver
     public int void _IsDeviceConnected() 
 ```
 **ONLY FOR WINDOWS**
-Returns current Game mode
+Returns if USB is connected to PC
 >**Type**
 >Optional
 
@@ -366,7 +366,7 @@ Returns current Game mode
     public int void _reconnectDevice() 
 ```
 **ONLY FOR WINDOWS**
-Returns current Game mode
+Reconnects Driver to Mat
 >**Type**
 >Optional
 
