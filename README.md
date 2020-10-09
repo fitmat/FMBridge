@@ -361,6 +361,23 @@ Returns current Game mode
 >**Returns**
 > int
 
+**8. _reconnectDevice**
+```csharp
+    public int void _reconnectDevice() 
+```
+**ONLY FOR WINDOWS**
+Returns current Game mode
+>**Type**
+>Optional
+
+>**Class**
+>DeviceControlActivity
+
+>**Param**
+>None 
+
+>**Returns**
+> None
 
 
 
