@@ -345,7 +345,7 @@ Returns response from Driver
 
 **7. _IsDeviceConnected**
 ```csharp
-    public int int _IsDeviceConnected() 
+    public int _IsDeviceConnected() 
 ```
 **ONLY FOR WINDOWS**
 Returns if USB is connected to PC
@@ -365,7 +365,7 @@ Returns if USB is connected to PC
 
 **8. _reconnectDevice**
 ```csharp
-    public void void _reconnectDevice() 
+    public void _reconnectDevice() 
 ```
 **ONLY FOR WINDOWS**
 Reconnects Driver to Mat
