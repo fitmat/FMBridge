@@ -365,7 +365,7 @@ Returns if USB is connected to PC
 
 **8. _reconnectDevice**
 ```csharp
-    public int void _reconnectDevice() 
+    public void void _reconnectDevice() 
 ```
 **ONLY FOR WINDOWS**
 Reconnects Driver to Mat
