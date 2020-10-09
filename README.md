@@ -345,7 +345,7 @@ Returns response from Driver
 
 **7. _IsDeviceConnected**
 ```csharp
-    public int void _IsDeviceConnected() 
+    public int int _IsDeviceConnected() 
 ```
 **ONLY FOR WINDOWS**
 Returns if USB is connected to PC
