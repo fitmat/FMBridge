@@ -360,6 +360,8 @@ Returns if USB is connected to PC
 
 >**Returns**
 > int
+------------------------
+
 
 **8. _reconnectDevice**
 ```csharp
