@@ -1,4 +1,8 @@
-
+## Whats new in the release - v0.1.32
+* Solved LCKids issue of Null Constructor which caused issue in Adventure Gaming
+* Added New MAT Control algo
+* Minor changes in Skaters
+* Added Windows driver in 'src' folder
 
 ## Whats new in the release - v0.1.31
 * Removed TXT Logger (No Change in game)
@@ -9,13 +13,6 @@
 * Now every game session you play, A folder called "GAME-LOGS" will be created and inside it you can find a folder with Data & Time which contains "FMData.txt"
 * This FMData.txt will be used for MP Accuracy Analysis
 * No changes on game or game-lib side needed
-
-## Whats new in the release - v0.1.29
-* Added switching algorithm from SP to MP and vice versa
-* Gaming team can call setGameMode (Ref. section [1.7.5](https://github.com/fitmat/FMBridge#17-api)) whenever they need to switch player-mode 
-* In this build setGameMode can be called multiple time just like setClusterID() API
-* Added support for new games/liveclass actions. Please refer to Game Identifier & Action Identifier table
-
 
 # 1. ReadMe
 ## 1.1 What is FBridge?
@@ -166,13 +163,13 @@ void Awake()
 
 
 #### *Windows*
-1.  Call InitPCFramework(). Usually call in Awake() with mac-address and game-id 
+1.  Call InitPCFramework(). Usually call in Awake() with game-id 
 ```csharp
 //SOMETHING LIKE THIS
 void Awake()
 {
     //params (int GameID )
-    InitBLE.InitPCFramework(GameID);      
+    DeviceControlActivity.InitPCFramework(GameID);      
 }
 ```
 
