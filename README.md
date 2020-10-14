@@ -169,7 +169,7 @@ void Awake()
 void Awake()
 {
     //params (int GameID )
-    DeviceControlActivity.InitPCFramework(GameID);      
+    InitBLE.InitPCFramework(GameID);      
 }
 ```
 
