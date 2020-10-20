@@ -74,10 +74,29 @@ public class InitBLE
             return _pluginInstance;
         }
     }
-    public static string getBLEStatus()
+    public static string getMatConnectionStatus()
     {
-        return BLEStatus;
+         #if UNITY_ANDROID
+            return BLEStatus;
+        #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+            if(DeviceControlActivity._IsDeviceConnected(gameMode)){
+                return "CONNECTED"
+            }else{
+                return "DISCONNECTED"
+            }
+        #endif    
     }
+
+
+    public static string reconnectMat()
+    {
+        #if UNITY_ANDROID
+            PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
+        #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+            DeviceControlActivity._reconnectDevice();
+        #endif    
+    }
+
 
     //STEP 5 - Init Android Class & Objects
     public static void InitBLEFramework(string macaddress, int gameID)
