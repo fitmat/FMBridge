@@ -79,7 +79,7 @@ public class InitBLE
          #if UNITY_ANDROID
             return BLEStatus;
         #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            if(DeviceControlActivity._IsDeviceConnected(gameMode)){
+            if(DeviceControlActivity._IsDeviceConnected()){
                 return "CONNECTED"
             }else{
                 return "DISCONNECTED"
