@@ -3,6 +3,10 @@
 * Added New MAT Control algo
 * Minor changes in Skaters
 * Added Windows driver in 'src' folder
+* Added two new APIs (Check Readme)
+* Added new functions in readme (reconnect to mat and check Mat Connection)
+* Saurabh need to rename older wrapper of getBLEStatus to getMatConnectionStatus
+* Also earlier in android we were calling InitBLEFramework to reconnect mat now use reconnectMat to reconnect to mat for android and PC
 
 ## Whats new in the release - v0.1.31
 * Removed TXT Logger (No Change in game)
