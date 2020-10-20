@@ -88,7 +88,7 @@ public class InitBLE
     }
 
 
-    public static string reconnectMat()
+    public static void reconnectMat()
     {
         #if UNITY_ANDROID
             PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
