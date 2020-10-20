@@ -360,7 +360,7 @@ Returns if USB is connected to PC
 >None 
 
 >**Returns**
-> int
+> int ( 0- Not connected | 1-Connected )
 ------------------------
 
 
