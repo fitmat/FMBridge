@@ -76,16 +76,13 @@ public class InitBLE
     }
     public static string getMatConnectionStatus()
     {
-         #if UNITY_ANDROID
-            return BLEStatus;
+        #if UNITY_ANDROID
+                    return BLEStatus;
         #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            if(DeviceControlActivity._IsDeviceConnected()){
-                return "CONNECTED"
-            }else{
-                return "DISCONNECTED"
-            }
-        #endif    
+                return DeviceControlActivity._IsDeviceConnected() == 1 ? "CONNECTED" : "DISCONNECTED";
+        #endif
     }
+    
 
 
     public static void reconnectMat()
