@@ -6,7 +6,6 @@ public class InitBLE
     static AndroidJavaClass _pluginClass;
     static AndroidJavaObject _pluginInstance;
     const string driverPathName = "com.fitmat.fitmatdriver.Producer.Connection.DeviceControlActivity";
-    string FMResponseCount = "";
     static string BLEStatus = "";
     //STEP 3 - Create Unity Callback class
     class UnityCallback : AndroidJavaProxy
@@ -41,12 +40,19 @@ public class InitBLE
 
     public static string GetFMResponse()
     {
-        return DeviceControlActivity._getFMResponse();
-//#if UNITY_ANDROID
-//        return InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
-//#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-//        return DeviceControlActivity._getFMResponse();
-//#endif
+        try
+        {
+#if UNITY_ANDROID
+                return InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+            return DeviceControlActivity._getFMResponse();
+#endif
+        }
+        catch(Exception e)
+        {
+            Debug.Log("Exception in getMatConnectionStatus() : " + e.Message);
+            return "error";
+        }
     }
 
     //STEP 4 - Init Android Class & Objects
@@ -74,24 +80,42 @@ public class InitBLE
             return _pluginInstance;
         }
     }
+
+
     public static string getMatConnectionStatus()
     {
-        #if UNITY_ANDROID
-                    return BLEStatus;
-        #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-                return DeviceControlActivity._IsDeviceConnected() == 1 ? "CONNECTED" : "DISCONNECTED";
-        #endif
+        try
+        {
+#if UNITY_ANDROID
+        return BLEStatus;
+#elif UNITY_STANDALONE_WIN
+            return DeviceControlActivity._IsDeviceConnected() == 1 ? "CONNECTED" : "DISCONNECTED";
+#elif UNITY_EDITOR
+        return "connected";
+#endif
+        }
+        catch(Exception e)
+        {
+            Debug.Log("Exception in getMatConnectionStatus() : " + e.Message);
+            return "connected";
+        }
     }
-    
 
 
     public static void reconnectMat()
     {
-        #if UNITY_ANDROID
+        try
+        { 
+#if UNITY_ANDROID
             PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
-        #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            DeviceControlActivity._reconnectDevice();
-        #endif    
+#elif UNITY_STANDALONE_WIN
+        DeviceControlActivity._reconnectDevice();
+#endif
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Exception in reconnectMat() : " + e.Message);
+        }
     }
 
 
@@ -99,13 +123,15 @@ public class InitBLE
     public static void InitBLEFramework(string macaddress, int gameID)
     {
         Debug.Log("init_ble: setting macaddress & gameID - " + macaddress + " " + gameID);
-        #if UNITY_IPHONE
+        try
+        {
+#if UNITY_IPHONE
             // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
                 _InitBLEFramework();
             }
-        #elif UNITY_ANDROID
+#elif UNITY_ANDROID
             if (Application.platform == RuntimePlatform.Android)
             {
                 System.Action<string> callback = ((string message) =>
@@ -122,23 +148,27 @@ public class InitBLE
                 }
                 */
             }
-        #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
             Debug.Log("Calling DeviceControlActivity.InitPCFramework()");
             DeviceControlActivity.InitPCFramework(gameID);
-        #endif
+#endif
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Exception in InitBLEFramework() : " + e.Message);
+        }
     }
-
 
 
     public static void setGameMode(int gameMode)
     {
         try
         {
-            #if UNITY_ANDROID
+#if UNITY_ANDROID
                 PluginInstance.Call("_setGameMode", gameMode);
-            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-                DeviceControlActivity._setGameMode(gameMode);
-            #endif    
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+            DeviceControlActivity._setGameMode(gameMode);
+#endif
         }
         catch (Exception e)
         {
@@ -150,11 +180,11 @@ public class InitBLE
     {
         try
         {
-            #if UNITY_ANDROID
+#if UNITY_ANDROID
                 return PluginInstance.CallStatic<int>("_getGameMode");
-            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-                return DeviceControlActivity._getGameMode();
-            #endif
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+            return DeviceControlActivity._getGameMode();
+#endif
         }
         catch (Exception e)
         {
@@ -168,11 +198,11 @@ public class InitBLE
     {
         try
         {
-            #if UNITY_ANDROID
+#if UNITY_ANDROID
                 PluginInstance.Call("_setGameID", gameID);
-            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-                DeviceControlActivity._setGameID(gameID);
-            #endif
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+            DeviceControlActivity._setGameID(gameID);
+#endif
         }
         catch (Exception e)
         {
@@ -184,11 +214,11 @@ public class InitBLE
     {
         try
         {
-            #if UNITY_ANDROID
+#if UNITY_ANDROID
                 return PluginInstance.CallStatic<int>("_getGameID");
-            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-                return DeviceControlActivity._getGameID();
-            #endif         
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+            return DeviceControlActivity._getGameID();
+#endif
         }
         catch (Exception e)
         {
@@ -201,11 +231,11 @@ public class InitBLE
     {
         try
         {
-            #if UNITY_ANDROID
+#if UNITY_ANDROID
                 return PluginInstance.CallStatic<string>("_getDriverVersion");
-            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-                return DeviceControlActivity._getDriverVersion();
-            #endif
+#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+            return DeviceControlActivity._getDriverVersion();
+#endif
         }
         catch (Exception exp)
         {
