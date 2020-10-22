@@ -78,56 +78,56 @@ Before you get started with the FMBridge, you will require following already bei
 ### 2. Action Identifier Table 
 | Action Name       |   Action ID   |   Properties   | 
 |-------------------|---------------|----------------|
-| Left              | 9GO5          |      NONE      |
-| Right             | 3KWN          |      NONE      |   
-| Enter             | PLW3          |      NONE      |
-| Pause             | UDH0          |      NONE      |
+| Left              | 9GO5          |      -      |
+| Right             | 3KWN          |      -      |   
+| Enter             | PLW3          |      -      |
+| Pause             | UDH0          |      -      |
 | Running           | SWLO          | totalStepsCount, speed      |
-| Running Stopped   | 7RCE          |      NONE      | 
-| Jump              | 9D6O          |      NONE      |
-| Right Move        | DMEY          |      NONE      | 
-| Left Move         | 38UF          |      NONE      | 
-| Jump In           | EUOA          |      NONE      | 
-| Jump Out          | QRTY          |      NONE      | 
-| Jumping Jack      | 99XR          |      NONE      |
-| Skier Jack        | NWCH          |      NONE      |
-| Crossover JJ      | VUFO          |      NONE      |
-| Lunges Run        | 386I          |      NONE      |
-| Mountain Climbing | BGM4          |      NONE      |
-| Plank Started     | 58GH          |      NONE      |
-| Plank Stopped     | 0DLA          |      NONE      |
-| Mule Kick         | WBUT          |      NONE      |
-| R Leg Hopping     | 3DIN          |      NONE      |
-| L Leg Hopping     | 3DI1          |      NONE      |
-| Burpee            | FN1S          |      NONE      |
-| 180 Jumps         | V56G          |      NONE      |
-| Diagonal Jump     | 6JJR          |      NONE      |
-| Forward Jump      | UJ3J          |      NONE      |
-| Backward Jump     | U10J          |      NONE      |
-| Right Jump        | B8X7          |      NONE      |
-| Left Jump         | 18X7          |      NONE      |
-| Star Jump         | LPM0          |      NONE      |
-| Chest Jump        | JASL          |      NONE      |
-| Hopscotch         | U8W2          |      NONE      |
-| Balance Started   | UWC6          |      NONE      |
-| Balance Stopped   | 1WC1          |      NONE      |
-| 1-Arm Started     | ISJD          |      NONE      |
-| 1-Arm Stopped     | EJ02          |      NONE      |
-| Ninja Kick        | 90DM          |      NONE      |
-| High Knee         | HXCQ          |      NONE      |
-| 180 Squats        | FYN1          |      NONE      |
-| Squat & Jump      | 6CTM          |      NONE      |
-| Squat & Kick      | E0CB          |      NONE      |
-| Squats            | OYMP          |      NONE      |
-| Squat & JJ        | O12U          |      NONE      |
-| Lateral Squats    | X5IW          |      NONE      |
-| Plank Jump Ins    | WBTW          |      NONE      |
-| 3 Leg Dog         | 8G3J          |      NONE      |
-| Banarsana         | UWHX          |      NONE      |
-| Aeroplane pose    | Not Developed |      NONE      |
-| Vikrasana         | Not Developed |      NONE      |
-| Ardha Chandrasana | 3JCQ          |      NONE      |
-| Malasana          | 3J11          |      NONE      |
+| Running Stopped   | 7RCE          |      -      | 
+| Jump              | 9D6O          |      -      |
+| Right Move        | DMEY          |      -      | 
+| Left Move         | 38UF          |      -      | 
+| Jump In           | EUOA          |      -      | 
+| Jump Out          | QRTY          |      -      | 
+| Jumping Jack      | 99XR          |      -      |
+| Skier Jack        | NWCH          |      -      |
+| Crossover JJ      | VUFO          |      -      |
+| Lunges Run        | 386I          |      -      |
+| Mountain Climbing | BGM4          |      -      |
+| Plank Started     | 58GH          |      -      |
+| Plank Stopped     | 0DLA          |      -      |
+| Mule Kick         | WBUT          |      -      |
+| R Leg Hopping     | 3DIN          |      -      |
+| L Leg Hopping     | 3DI1          |      -      |
+| Burpee            | FN1S          |      -      |
+| 180 Jumps         | V56G          |      -      |
+| Diagonal Jump     | 6JJR          |      -      |
+| Forward Jump      | UJ3J          |      -      |
+| Backward Jump     | U10J          |      -      |
+| Right Jump        | B8X7          |      -      |
+| Left Jump         | 18X7          |      -      |
+| Star Jump         | LPM0          |      -      |
+| Chest Jump        | JASL          |      -      |
+| Hopscotch         | U8W2          |      -      |
+| Balance Started   | UWC6          |      -      |
+| Balance Stopped   | 1WC1          |      -      |
+| 1-Arm Started     | ISJD          |      -      |
+| 1-Arm Stopped     | EJ02          |      -      |
+| Ninja Kick        | 90DM          |      -      |
+| High Knee         | HXCQ          |      -      |
+| 180 Squats        | FYN1          |      -      |
+| Squat & Jump      | 6CTM          |      -      |
+| Squat & Kick      | E0CB          |      -      |
+| Squats            | OYMP          |      -      |
+| Squat & JJ        | O12U          |      -      |
+| Lateral Squats    | X5IW          |      -      |
+| Plank Jump Ins    | WBTW          |      -      |
+| 3 Leg Dog         | 8G3J          |      -      |
+| Banarsana         | UWHX          |      -      |
+| Aeroplane pose    | Not Developed |      -      |
+| Vikrasana         | Not Developed |      -      |
+| Ardha Chandrasana | 3JCQ          |      -      |
+| Malasana          | 3J11          |      -      |
 | Tiles             | TIL3          | X1, x2, x3, x4 |
 
 
