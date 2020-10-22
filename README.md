@@ -76,7 +76,7 @@ Before you get started with the FMBridge, you will require following already bei
 | PLANK ONE ARM HOLD     |   235  | 1-Arm Started, 1-Arm Stopped                    |
 
 ### 2. Action Identifier Table 
-| Action Name       |   Action ID   |   PROPERTIES   | 
+| Action Name       |   Action ID   |   Properties   | 
 |-------------------|---------------|----------------|
 | Left              | 9GO5          |      NONE      |
 | Right             | 3KWN          |      NONE      |   
