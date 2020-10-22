@@ -1,3 +1,7 @@
+## Whats new in the release - v0.1.33
+* Added new game Mat Beats (Check Action Identifier Table for properties)
+* Release includes both PC and Android FMDriver
+
 ## Whats new in the release - v0.1.32
 * Solved LCKids issue of Null Constructor which caused issue in Adventure Gaming
 * Added New MAT Control algo
@@ -12,11 +16,6 @@
 * Removed TXT Logger (No Change in game)
 * Added new Jump In-Out algortihm  (No Change in game)
 
-## Whats new in the release - v0.1.30
-* Added FMResponse log for Single Player. Earlier was only for MP.
-* Now every game session you play, A folder called "GAME-LOGS" will be created and inside it you can find a folder with Data & Time which contains "FMData.txt"
-* This FMData.txt will be used for MP Accuracy Analysis
-* No changes on game or game-lib side needed
 
 # 1. ReadMe
 ## 1.1 What is FBridge?
