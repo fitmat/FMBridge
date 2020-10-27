@@ -37,7 +37,7 @@ Before you get started with the FMBridge, you will require following already bei
 | TREE WARRIOR           |    2   | Left Move, Right Move, Jump                     |
 | SKATERS                |    3   | Jump In, Jump Out                               |
 | PENGUIN POP            |    4   | Jump                                            |
-| MAGIC BEATS            |    5   | Tiles                                           |
+| MAT BEATS              |    5   | Tiles                                           |
 | BASIC1                 |   201  | Running, Running Stopped, High Knee, Skier Jack |
 | BASIC2                 |   202  | Running, Running Stopped                        |
 | BASIC3                 |   203  | High Knee                                       |
