@@ -1,3 +1,6 @@
+## Whats new in the release - v0.1.34
+* Added new algorithm for Running adn Jump issue
+
 ## Whats new in the release - v0.1.33
 * Added new game Mat Beats (Check Action Identifier Table for properties)
 * Release includes both PC and Android FMDriver
@@ -11,10 +14,6 @@
 * Added new functions in readme (reconnect to mat and check Mat Connection)
 * Saurabh need to rename older wrapper of getBLEStatus to getMatConnectionStatus
 * Also earlier in android we were calling InitBLEFramework to reconnect mat now use reconnectMat to reconnect to mat for android and PC
-
-## Whats new in the release - v0.1.31
-* Removed TXT Logger (No Change in game)
-* Added new Jump In-Out algortihm  (No Change in game)
 
 
 # 1. ReadMe
