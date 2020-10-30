@@ -1,5 +1,5 @@
 ## Whats new in the release - v0.1.34
-* Added new algorithm for Running adn Jump issue
+* Added new algorithm for Running and Jump issue
 
 ## Whats new in the release - v0.1.33
 * Added new game Mat Beats (Check Action Identifier Table for properties)
