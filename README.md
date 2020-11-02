@@ -1,20 +1,13 @@
+## Whats new in the release - v0.1.35
+* Solved bug in Skaters
+* Solved Pause issue in Joyful Jump
+
 ## Whats new in the release - v0.1.34
 * Added new algorithm for Running and Jump issue
 
 ## Whats new in the release - v0.1.33
 * Added new game Mat Beats (Check Action Identifier Table for properties)
 * Release includes both PC and Android FMDriver
-
-## Whats new in the release - v0.1.32
-* Solved LCKids issue of Null Constructor which caused issue in Adventure Gaming
-* Added New MAT Control algo
-* Minor changes in Skaters
-* Added Windows driver in 'src' folder
-* Added two new APIs (Check Readme)
-* Added new functions in readme (reconnect to mat and check Mat Connection)
-* Saurabh need to rename older wrapper of getBLEStatus to getMatConnectionStatus
-* Also earlier in android we were calling InitBLEFramework to reconnect mat now use reconnectMat to reconnect to mat for android and PC
-
 
 # 1. ReadMe
 ## 1.1 What is FBridge?
