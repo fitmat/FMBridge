@@ -1,13 +1,13 @@
+## Whats new in the release - v0.1.36
+* Added new driver for Skaters (no changes on gaming side)
+* Added new reconnect BLE mode (no changes on gaming side)
+
 ## Whats new in the release - v0.1.35
 * Solved bug in Skaters
 * Solved Pause issue in Joyful Jump
 
 ## Whats new in the release - v0.1.34
 * Added new algorithm for Running and Jump issue
-
-## Whats new in the release - v0.1.33
-* Added new game Mat Beats (Check Action Identifier Table for properties)
-* Release includes both PC and Android FMDriver
 
 # 1. ReadMe
 ## 1.1 What is FBridge?
