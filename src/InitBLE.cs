@@ -43,7 +43,7 @@ public class InitBLE
         try
         {
 #if UNITY_ANDROID
-                return InitBLE.PluginClass.CallStatic<string>("_getFMResponse");
+                return PluginClass.CallStatic<string>("_getFMResponse");
 #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
             return DeviceControlActivity._getFMResponse();
 #endif
@@ -86,27 +86,30 @@ public class InitBLE
     {
         try
         {
-#if UNITY_ANDROID
-        return BLEStatus;
-#elif UNITY_STANDALONE_WIN
-            return DeviceControlActivity._IsDeviceConnected() == 1 ? "CONNECTED" : "DISCONNECTED";
-#elif UNITY_EDITOR
-        return "connected";
-#endif
+            if (Application.platform == RuntimePlatform.Android)
+                return BLEStatus;
+            else if (Application.platform == RuntimePlatform.WindowsPlayer)
+                return DeviceControlActivity._IsDeviceConnected() == 1 ? "CONNECTED" : "DISCONNECTED";
+            else if (Application.platform == RuntimePlatform.WindowsEditor)
+                return "connected";
         }
-        catch(Exception e)
+        catch (Exception e)
         {
             Debug.Log("Exception in getMatConnectionStatus() : " + e.Message);
-            return "connected";
         }
+        return "disconnected";
     }
 
 
     public static void reconnectMat()
     {
         try
-        { 
+        {
 #if UNITY_ANDROID
+            System.Action<string> callback = ((string message) =>
+            {
+                BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
+            });
             PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
 #elif UNITY_STANDALONE_WIN
         DeviceControlActivity._reconnectDevice();
@@ -118,13 +121,10 @@ public class InitBLE
         }
     }
 
-
     //STEP 5 - Init Android Class & Objects
     public static void InitBLEFramework(string macaddress, int gameID)
     {
         Debug.Log("init_ble: setting macaddress & gameID - " + macaddress + " " + gameID);
-        try
-        {
 #if UNITY_IPHONE
             // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
             if (Application.platform == RuntimePlatform.IPhonePlayer)
@@ -152,11 +152,6 @@ public class InitBLE
             Debug.Log("Calling DeviceControlActivity.InitPCFramework()");
             DeviceControlActivity.InitPCFramework(gameID);
 #endif
-        }
-        catch (Exception e)
-        {
-            Debug.Log("Exception in InitBLEFramework() : " + e.Message);
-        }
     }
 
 
