@@ -1,3 +1,9 @@
+
+
+## Whats new in the release - v0.2.0
+* Solved running issue in Joyful Jumps
+* Solved two  JUMP_OUT issue in skaters
+
 ## Whats new in the release - v0.1.36
 * Added new driver for Skaters (no changes on gaming side)
 * Added new reconnect BLE mode (no changes on gaming side)
@@ -6,8 +12,6 @@
 * Solved bug in Skaters
 * Solved Pause issue in Joyful Jump
 
-## Whats new in the release - v0.1.34
-* Added new algorithm for Running and Jump issue
 
 # 1. ReadMe
 ## 1.1 What is FBridge?
