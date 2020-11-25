@@ -157,10 +157,11 @@ void Awake()
 
 ```csharp
    //params ( int gameMode)
-   //gameMode = 0 - Multiplaye
-   //gameMode = 1 - Singleplayer.
+   //gameMode = 0 - Multiplayer
+   //gameMode = 1 - Singleplayer
    InitBLE.setGameMode(gameMode);
 ```
+> NOTE : Call setGameMode-Multiplayer only after setting game mode for SINGLE PLAYER and it can be called multiple times
 
 
 #### *Windows*
@@ -173,8 +174,6 @@ void Awake()
     InitBLE.InitPCFramework(GameID);      
 }
 ```
-
-> NOTE : Call setGameMode only after setting Mac-Address and it can be called multiple times
 
 
 ## 1.6 Communication Protocol
