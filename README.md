@@ -31,10 +31,16 @@ Before you get started with the FMBridge, you will require following already bei
 | YIPLI RUNNER           |    2   | Left Move, Right Move, Jump                     |
 | EGG CATCHER            |    2   | Left Move, Right Move, Jump                     |
 | TREE WARRIOR           |    2   | Left Move, Right Move, Jump                     |
-| PUDDLE HOP             |    4   | Jump                                            |
+| PUDDLE HOP             |   205  | Jump                                            |
 | SKATERS                |    3   | Jump In, Jump Out                               |
 | PENGUIN POP            |    4   | Jump                                            |
 | MAT BEATS              |    5   | Tiles                                           |
+| TRAPPED                |    1   | Running, Running Stopped, Jump                  |
+| TUG OF WAR             |   202  | Running, Running Stopped (Running Round)        |
+| TUG OF WAR             |   205  | Jump (Jumping Round)                            |
+| THE RAFT               |    2   | Left Move, Right Move, Jump                     |
+| MONSTER RIVER          |   211  | R Leg Hopping, L Leg Hopping                    |
+| MULTIPLAYER MAYHEM     |   5,0  | Tiles, Mat Controls                             |
 | BASIC1                 |   201  | Running, Running Stopped, High Knee, Skier Jack |
 | BASIC2                 |   202  | Running, Running Stopped                        |
 | BASIC3                 |   203  | High Knee                                       |
@@ -390,3 +396,5 @@ Please make sure to update tests as appropriate.
 ## 1.9 License
 [MIT](https://choosealicense.com/licenses/mit/)
 
+## 2.0 TODo List
+New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action.
