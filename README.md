@@ -12,6 +12,13 @@
 * Solved bug in Skaters
 * Solved Pause issue in Joyful Jump
 
+----------------------------------------------------------
+## TODO
+- [x] todo 1
+- [x] todo 2
+- [ ] todo 3
+------------------------------------------------
+
 
 # 1. ReadMe
 ## 1.1 What is FBridge?
