@@ -14,7 +14,8 @@
 
 ----------------------------------------------------------
 ## TODO
-- [ ] New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action.
+- [ ] New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
+- [ ] Change the MAT Control's logic for the tap. Add relative distance check for check sequence
 ------------------------------------------------
 
 
