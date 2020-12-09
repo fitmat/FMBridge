@@ -14,9 +14,7 @@
 
 ----------------------------------------------------------
 ## TODO
-- [x] todo 1
-- [x] todo 2
-- [ ] todo 3
+- [ ] New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action.
 ------------------------------------------------
 
 
@@ -402,6 +400,3 @@ Please make sure to update tests as appropriate.
 
 ## 1.9 License
 [MIT](https://choosealicense.com/licenses/mit/)
-
-## 2.0 TODO List
-New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action.
