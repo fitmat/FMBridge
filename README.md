@@ -31,6 +31,7 @@ Before you get started with the FMBridge, you will require following already bei
 | YIPLI RUNNER           |    2   | Left Move, Right Move, Jump                     |
 | EGG CATCHER            |    2   | Left Move, Right Move, Jump                     |
 | TREE WARRIOR           |    2   | Left Move, Right Move, Jump                     |
+| PUDDLE HOP             |    4   | Jump                                            |
 | SKATERS                |    3   | Jump In, Jump Out                               |
 | PENGUIN POP            |    4   | Jump                                            |
 | MAT BEATS              |    5   | Tiles                                           |
