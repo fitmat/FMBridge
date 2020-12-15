@@ -1,5 +1,6 @@
 
 
+
 ## Whats new in the release - v0.2.0
 * Solved running issue in Joyful Jumps
 * Solved two  JUMP_OUT issue in skaters
@@ -14,10 +15,18 @@
 
 ----------------------------------------------------------
 ## TODO
-- [-] New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
-- [ ] Change the MAT Control's logic for the tap. Add relative distance check for check sequence
-- [ ] Instead of sending full fmresponse as null, send all fields of fmdata with null values
-- [ ] Handle very high sensitivity of right and left tap in cluster 0
+
+ ![#00FF00](https://via.placeholder.com/15/00FF00/000000?text=+) `Solved`
+ - [x] New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
+- [x] Instead of sending full fmresponse as null, send all fields of fmdata with null values
+
+![#FFA500](https://via.placeholder.com/15/FFA500/000000?text=+) `Testing`
+- [ ] Change the MAT Control's logic for the tap. Add relative distance check for check sequence 
+
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Unclear Requirement`
+- [ ] Handle very high sensitivity of right and left tap in cluster 0     
+
+
 ------------------------------------------------
 
 
