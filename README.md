@@ -16,8 +16,8 @@
 ----------------------------------------------------------
 ## TODO
 
- ![#00FF00](https://via.placeholder.com/15/00FF00/000000?text=+) `Solved`
- - [x] New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
+![#00FF00](https://via.placeholder.com/15/00FF00/000000?text=+) `Solved`
+- [x] New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
 - [x] Instead of sending full fmresponse as null, send all fields of fmdata with null values
 
 ![#FFA500](https://via.placeholder.com/15/FFA500/000000?text=+) `Testing`
