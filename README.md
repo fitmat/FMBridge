@@ -4,6 +4,7 @@
 * New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
 * Instead of sending full fmresponse as null, send all fields of fmdata with null values
 * Change the MAT Control's logic for the tap. Add relative distance check for check sequence 
+* NOTE - PC VERSION IS NOT ADDED IN THE CURRENT RELEASE
 
 ## Whats new in the release - v0.2.0
 * Solved running issue in Joyful Jumps
@@ -402,7 +403,7 @@ Reconnects Driver to Mat
 
 >**Returns**
 > None
-
+------------------------
 
 **9. _setConnectionType**
 ```csharp
