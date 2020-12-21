@@ -1,6 +1,9 @@
-
-
-
+## Whats new in the release - v0.2.1
+* Added Android TV Support
+* Check point/API 1.7.8 on how to set device type for android type
+* New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
+* Instead of sending full fmresponse as null, send all fields of fmdata with null values
+* Change the MAT Control's logic for the tap. Add relative distance check for check sequence 
 
 ## Whats new in the release - v0.2.0
 * Solved running issue in Joyful Jumps
@@ -10,17 +13,10 @@
 * Added new driver for Skaters (no changes on gaming side)
 * Added new reconnect BLE mode (no changes on gaming side)
 
-## Whats new in the release - v0.1.35
-* Solved bug in Skaters
-* Solved Pause issue in Joyful Jump
-
 ----------------------------------------------------------
 ## TODO
 
 ![#00FF00](https://via.placeholder.com/15/00FF00/000000?text=+) `In FMTest Driver`
-- [x] New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
-- [x] Instead of sending full fmresponse as null, send all fields of fmdata with null values
-- [x] Change the MAT Control's logic for the tap. Add relative distance check for check sequence 
 - [x] New driver for Android TV
 
 
@@ -408,7 +404,25 @@ Reconnects Driver to Mat
 > None
 
 
+**9. _setConnectionType**
+```csharp
+   public static void _setConnectionType(string Type)
+```
+**ONLY FOR ANDROID TV**
+Sets current Connection Type
+>**Type**
+>Mandatory for Android TV | Not for PC/Mobile
 
+>**Class**
+>InItBLE
+
+>**Param**
+>Type
+>"USB" or "BLE"
+
+>**Returns**
+> none
+------------------------
 
 ## 1.8 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
