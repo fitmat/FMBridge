@@ -1,6 +1,6 @@
 ## Whats new in the release - v0.2.1
 * Added Android TV Support
-* Check point/API 1.7.8 on how to set device type for android type
+* Check point/API  [1.7.9](https://github.com/fitmat/FMBridge#17-api) on how to set device type for android type
 * New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
 * Instead of sending full fmresponse as null, send all fields of fmdata with null values
 * Change the MAT Control's logic for the tap. Add relative distance check for check sequence 
