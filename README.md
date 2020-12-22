@@ -26,7 +26,8 @@
 
 ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Unclear/Pending`
 - [ ] Handle very high sensitivity of right and left tap in cluster 0 
-- [ ] 21 December 2020 : New Cluster Id required with- Jump + R_Leg_Hop + L_Leg_Hop    
+- [ ] 22 December 2020 : New Cluster Id  for The Raft with- Jump + R_Leg_Hop + L_Leg_Hop (Tree Warrior to have Jump + Right Tap + Left Tap
+The Raft to have Jump + R_Leg_Hop + L_Leg_Hop)
 
 
 ------------------------------------------------
