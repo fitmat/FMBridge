@@ -42,11 +42,11 @@ public class InitBLE
     {
         try
         {
-#if UNITY_ANDROID
+            #if UNITY_ANDROID
                 return PluginClass.CallStatic<string>("_getFMResponse");
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            return DeviceControlActivity._getFMResponse();
-#endif
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                return DeviceControlActivity._getFMResponse();
+            #endif
         }
         catch(Exception e)
         {
@@ -105,15 +105,15 @@ public class InitBLE
     {
         try
         {
-#if UNITY_ANDROID
-            System.Action<string> callback = ((string message) =>
-            {
-                BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
-            });
-            PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
-#elif UNITY_STANDALONE_WIN
-        DeviceControlActivity._reconnectDevice();
-#endif
+            #if UNITY_ANDROID
+                System.Action<string> callback = ((string message) =>
+                {
+                    BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
+                });
+                PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
+            #elif UNITY_STANDALONE_WIN
+                DeviceControlActivity._reconnectDevice();
+            #endif
         }
         catch (Exception e)
         {
@@ -125,33 +125,35 @@ public class InitBLE
     public static void InitBLEFramework(string macaddress, int gameID)
     {
         Debug.Log("init_ble: setting macaddress & gameID - " + macaddress + " " + gameID);
-#if UNITY_IPHONE
-            // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
-            if (Application.platform == RuntimePlatform.IPhonePlayer)
-            {
-                _InitBLEFramework();
-            }
-#elif UNITY_ANDROID
-            if (Application.platform == RuntimePlatform.Android)
-            {
-                System.Action<string> callback = ((string message) =>
+            #if UNITY_IPHONE
+                // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
+                if (Application.platform == RuntimePlatform.IPhonePlayer)
                 {
-                    BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
-                });
-
-                PluginInstance.Call("_setMACAddress", macaddress);
-                setGameClusterID(gameID);
-                PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
-                /*
-                if(!setGameMode(0)){
-                    Debug.Log("Failed to set Game Mode. Probable reason is your game doesnt support MultiPlayer functionality yet. ");
+                    _InitBLEFramework();
                 }
-                */
-            }
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            Debug.Log("Calling DeviceControlActivity.InitPCFramework()");
-            DeviceControlActivity.InitPCFramework(gameID);
-#endif
+            #elif UNITY_ANDROID
+            if (Application.platform == RuntimePlatform.Android)
+                {
+                    System.Action<string> callback = ((string message) =>
+                    {
+                        BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
+                    });
+
+                    PluginInstance.Call("_setMACAddress", macaddress);
+                    /*
+                    if(!setGameMode(0)){
+                        Debug.Log("Failed to set Game Mode. Probable reason is your game doesnt support MultiPlayer functionality yet. ");
+                    }
+                    */
+                    
+                    setGameClusterID(gameID);
+                    PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
+                    
+                }
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                Debug.Log("Calling DeviceControlActivity.InitPCFramework()");
+                DeviceControlActivity.InitPCFramework(gameID);
+            #endif
     }
 
 
@@ -159,11 +161,11 @@ public class InitBLE
     {
         try
         {
-#if UNITY_ANDROID
+            #if UNITY_ANDROID
                 PluginInstance.Call("_setGameMode", gameMode);
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            DeviceControlActivity._setGameMode(gameMode);
-#endif
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                DeviceControlActivity._setGameMode(gameMode);
+            #endif
         }
         catch (Exception e)
         {
@@ -175,11 +177,11 @@ public class InitBLE
     {
         try
         {
-#if UNITY_ANDROID
+            #if UNITY_ANDROID
                 return PluginInstance.CallStatic<int>("_getGameMode");
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            return DeviceControlActivity._getGameMode();
-#endif
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                return DeviceControlActivity._getGameMode();
+            #endif
         }
         catch (Exception e)
         {
@@ -193,11 +195,11 @@ public class InitBLE
     {
         try
         {
-#if UNITY_ANDROID
+            #if UNITY_ANDROID
                 PluginInstance.Call("_setGameID", gameID);
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            DeviceControlActivity._setGameID(gameID);
-#endif
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                DeviceControlActivity._setGameID(gameID);
+            #endif
         }
         catch (Exception e)
         {
@@ -205,15 +207,49 @@ public class InitBLE
         }
     }
 
+    public static void setGameClusterID(int P1_gameID, int P2_gameID)
+    {
+        try
+        {
+            #if UNITY_ANDROID
+                PluginInstance.Call("_setGameID", P1_gameID, P2_gameID);
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                DeviceControlActivity._setGameID(P1_gameID, P2_gameID);
+            #endif
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Exception in setGameClusterID() : " + e.Message);
+        }
+    }
+
+
     public static int getGameClusterID()
     {
         try
         {
-#if UNITY_ANDROID
+            #if UNITY_ANDROID
                 return PluginInstance.CallStatic<int>("_getGameID");
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            return DeviceControlActivity._getGameID();
-#endif
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                return DeviceControlActivity._getGameID();
+            #endif
+        }
+        catch (Exception e)
+        {
+            Debug.Log("Exception in getGameClusterID() : " + e.Message);
+            return 1000;//1000 will be flagged as an invalid GameId on game side.
+        }
+    }
+
+    public static int getGameClusterID(int playerID)
+    {
+        try
+        {
+            #if UNITY_ANDROID
+                return PluginInstance.CallStatic<int>("_getGameID", playerID);
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                return DeviceControlActivity._getGameID(playerID);
+            #endif
         }
         catch (Exception e)
         {
@@ -226,16 +262,28 @@ public class InitBLE
     {
         try
         {
-#if UNITY_ANDROID
+            #if UNITY_ANDROID
                 return PluginInstance.CallStatic<string>("_getDriverVersion");
-#elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-            return DeviceControlActivity._getDriverVersion();
-#endif
+            #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
+                return DeviceControlActivity._getDriverVersion();
+            #endif
         }
         catch (Exception exp)
         {
             Debug.Log("Exception in Driver Version" + exp.Message);
             return null;
         }
+    }
+
+    public static string setConnectionType(string type){
+        /*
+            - Strickly should be used for Android TV
+            - Optional for Android
+            - Not required for PC
+
+            @Params type : USB or BLE
+        */ 
+
+        PluginInstance.Call("_setConnectionType", type);
     }
 }
