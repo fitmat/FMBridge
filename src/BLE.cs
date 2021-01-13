@@ -88,25 +88,13 @@ public class BLE
     public static void InitBLEFramework(string macaddress)
     {
         Debug.Log("init_ble: setting macaddress & gameID - " + macaddress);
-#if UNITY_IPHONE
-                // Now we check that it's actually an iOS device/simulator, not the Unity Player. You only get plugins on the actual device or iOS Simulator.
-                if (Application.platform == RuntimePlatform.IPhonePlayer)
-                {
-                    _InitBLEFramework();
-                }
-#elif UNITY_ANDROID
-        if (Application.platform == RuntimePlatform.Android)
+        System.Action<string> callback = ((string message) =>
         {
-            System.Action<string> callback = ((string message) =>
-            {
-                BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
-            });
+            BLEFramework.Unity.BLEControllerEventHandler.OnBleDidInitialize(message);
+        });
 
-            PluginInstance.Call("_setMACAddress", macaddress);;
-            PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
-
-        }
-#endif
+        PluginInstance.Call("_setMACAddress", macaddress);;
+        PluginInstance.Call("_InitBLEFramework", new object[] { new UnityCallback(callback) });
     }
 
 
