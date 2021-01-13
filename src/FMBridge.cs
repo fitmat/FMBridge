@@ -18,7 +18,7 @@ public class FMBridge
     * @return bool
     *   Initiation success (true) or failed (false)
     */
-    public bool InitFMBridge(string _macAddress)
+    public static bool InitFMBridge(string _macAddress)
     {
         try
         {
@@ -45,7 +45,7 @@ public class FMBridge
     * @return bool
     *   Initiation success (true) or failed (false)
     */
-    public bool InitFMBridge()
+    public static bool InitFMBridge()
     {
         try
         {
