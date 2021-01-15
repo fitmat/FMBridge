@@ -1,3 +1,15 @@
+## Whats new in the release - v0.2.4
+* Multiple cluster ID support
+
+## Whats new in the release - v0.2.3
+* Added Codebase for Tree Warior
+* Bluetooth reconnection and permission Allow/Deny callback
+* MAT Pixel Short issues solved
+* NOTE - All games should at least be in 0.2.3
+
+## Whats new in the release - v0.2.2
+* Removed support for Android TV
+
 ## Whats new in the release - v0.2.1
 * Added Android TV Support
 * Check point/API  [1.7.9](https://github.com/fitmat/FMBridge#17-api) on how to set device type for android type
@@ -6,13 +18,6 @@
 * Change the MAT Control's logic for the tap. Add relative distance check for check sequence 
 * NOTE - PC VERSION IS NOT ADDED IN THE CURRENT RELEASE
 
-## Whats new in the release - v0.2.0
-* Solved running issue in Joyful Jumps
-* Solved two  JUMP_OUT issue in skaters
-
-## Whats new in the release - v0.1.36
-* Added new driver for Skaters (no changes on gaming side)
-* Added new reconnect BLE mode (no changes on gaming side)
 
 ----------------------------------------------------------
 ## TODO
@@ -422,6 +427,44 @@ Sets current Connection Type
 >**Param**
 >Type
 >"USB" or "BLE"
+
+>**Returns**
+> none
+------------------------
+**10. getGameClusterID**
+```csharp
+   public static int getGameClusterID(int playerID)
+```
+Returns current Game/Cluster ID for a particular player. THIS WORKS ONLY IF YOU ARE IN MULTI PLAYER. SETGAMEMODE FIRST TO GET ACCESS OF THIS API
+>**Type**
+>Optional
+
+>**Class**
+>InItBLE
+
+>**Param**
+>None
+
+>**Returns**
+> int
+------------------------
+
+**11. setGameClusterID**
+```csharp
+   public static void setGameClusterID(int p1_gameID, int p2_gameID)
+```
+Sets current Game/Cluster ID for a particular player. THIS WORKS ONLY IF YOU ARE IN MULTI PLAYER. SETGAMEMODE FIRST TO GET ACCESS OF THIS API
+>**Type**
+>Mandatory
+
+>**Class**
+>InItBLE
+
+>**Param**
+>p1_gameID
+>Sets cluster id for player-1. Refer Game Identifier Table for available gameID
+>p2_gameID
+>Sets cluster id for player-2. Refer Game Identifier Table for available gameID
 
 >**Returns**
 > none
