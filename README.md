@@ -1,5 +1,7 @@
 ## Whats new in the release - v0.2.4
-* Multiple cluster ID support
+* Multiple cluster ID for particular player support added. 
+* CHECK API SECTION FOR NEW API TO SET SAME
+* NOTE - All multi-player games need to be in 0.2.4
 
 ## Whats new in the release - v0.2.3
 * Added Codebase for Tree Warior
