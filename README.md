@@ -36,6 +36,7 @@
 - [ ] 22 December 2020 : New Cluster Id  for The Raft with- Jump + R_Leg_Hop + L_Leg_Hop (Tree Warrior to have Jump + Right Tap + Left Tap
 The Raft to have Jump + R_Leg_Hop + L_Leg_Hop)
 - [ ] POC of 2 different cluster id for 2 players in same MAT for Multiplayer.
+- [ ] Create one cluster with only: right tap + left tap, foot displacement for taps must be smaller
 
 
 ------------------------------------------------
