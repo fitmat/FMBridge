@@ -23,20 +23,9 @@
 
 ----------------------------------------------------------
 ## TODO
-
-![#00FF00](https://via.placeholder.com/15/00FF00/000000?text=+) `In FMTest Driver`
-- [x] New driver for Android TV
-
-
-![#FFA500](https://via.placeholder.com/15/FFA500/000000?text=+) `Under Development`
-- [ ] PC Driver - Add FMData & No Power Status code base
-
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `Unclear/Pending`
-- [ ] Handle very high sensitivity of right and left tap in cluster 0 
-- [ ] 22 December 2020 : New Cluster Id  for The Raft with- Jump + R_Leg_Hop + L_Leg_Hop (Tree Warrior to have Jump + Right Tap + Left Tap
-The Raft to have Jump + R_Leg_Hop + L_Leg_Hop)
-- [ ] POC of 2 different cluster id for 2 players in same MAT for Multiplayer.
 - [ ] Create one cluster with only: right tap + left tap, foot displacement for taps must be smaller
+- [ ] For PC Driver, change logic for reconneciton and init of InitBLEFramework()
+
 
 
 ------------------------------------------------
