@@ -1,3 +1,9 @@
+## Whats new in the release - v0.2.5
+* Added Tap Cluster
+* Added Touch Cluster and changed distance to 7
+* Added reconnection support for PC
+* NOTE - Changes only for all PC builds and MM
+
 ## Whats new in the release - v0.2.4
 * Multiple cluster ID for particular player support added. 
 * CHECK API SECTION FOR NEW API TO SET SAME
@@ -23,11 +29,9 @@
 
 ----------------------------------------------------------
 ## TODO
-- [ ] Create one cluster with only: right tap + left tap, foot displacement for taps must be smaller (Discuss on the disctance part with Saurabh)
-- [ ] For PC Driver, change logic for reconneciton and init of InitBLEFramework()
-- [ ] Cluster Id with One Leg Balance + One Leg Hop (priority : low)
-
-
+- [x] Create one cluster with only: right tap + left tap, foot displacement for taps must be smaller (Discuss on the disctance part with Saurabh)
+- [x] For PC Driver, change logic for reconneciton and init of InitBLEFramework()
+- [x] Cluster Id with One Leg Balance + One Leg Hop (priority : low)
 
 ------------------------------------------------
 
