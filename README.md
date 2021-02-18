@@ -32,6 +32,7 @@
 - [x] Create one cluster with only: right tap + left tap, foot displacement for taps must be smaller (Discuss on the disctance part with Saurabh)
 - [x] For PC Driver, change logic for reconneciton and init of InitBLEFramework()
 - [x] Cluster Id with One Leg Balance + One Leg Hop (priority : low)
+- [x] Cluster having: Jump + Left Tap + Right Tap with tap distance reduced, for multiplayer mode (priority : high)
 
 ------------------------------------------------
 
