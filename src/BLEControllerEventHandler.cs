@@ -91,17 +91,17 @@ namespace BLEFramework.Unity
         {
             string errorMessage = message != "Success" ? message : null;
             List<object> peripheralsList = new List<object>();
-            /* string peripheralJsonList = (errorMessage == null) ? BLEController.GetListOfDevices() : null;
+            string peripheralJsonList = (errorMessage == null) ? BLEController.GetListOfDevices() : null;
              if (peripheralJsonList != null)
              {
                  Dictionary<string, object> dictObject = Json.Deserialize(peripheralJsonList) as Dictionary<string, object>;
                  object receivedByteDataArray;
-                 if (dictObject.TryGetValue("data", out receivedByteDataArray))
+                 if (dictObject.TryGetValue("deviceList", out receivedByteDataArray))
                  {
                      peripheralsList = (List<object>)receivedByteDataArray;
                  }
              }
-             OnBleDidCompletePeripheralScanEvent?.Invoke(peripheralsList, errorMessage);*/
+             OnBleDidCompletePeripheralScanEvent?.Invoke(peripheralsList, errorMessage);
         }
     }
 }
