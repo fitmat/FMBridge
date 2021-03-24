@@ -52,10 +52,10 @@ Before you get started with the FMBridge, you will require following already bei
 |------------------------|--------|-------------------------------------------------|
 | MAT CONTROLS           |    0   | Left, Right, Enter                              |
 | JOYFULL JUMPS          |    1   | Running, Running Stopped, Jump                  |
-| METRO RUSH             |    6   | Left Move, Right Move, Jump                     |
-| EGG CATCHER            |    6   | Left Move, Right Move, Jump                     |
-| DANCING BALL           |    6   | Left Move, Right Move, Jump                     |
-| TREE WARRIOR           |    6   | Left Move, Right Move, Jump                     |
+| METRO RUSH             |    6   | Left tap, Right tap, Jump                       |
+| EGG CATCHER            |    6   | Left tap, Right tap, Jump                       |
+| DANCING BALL           |    6   | Left tap, Right tap, Jump                       |
+| TREE WARRIOR           |    6   | Left tap, Right tap, Jump                       |
 | PUDDLE HOP             |   205  | Jump                                            |
 | SKATERS                |    3   | Jump In, Jump Out                               |
 | PENGUIN POP            |    4   | Jump                                            |
