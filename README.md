@@ -52,16 +52,26 @@ Before you get started with the FMBridge, you will require following already bei
 |------------------------|--------|-------------------------------------------------|
 | MAT CONTROLS           |    0   | Left, Right, Enter                              |
 | JOYFULL JUMPS          |    1   | Running, Running Stopped, Jump                  |
-| YIPLI RUNNER           |    2   | Left Move, Right Move, Jump                     |
-| EGG CATCHER            |    2   | Left Move, Right Move, Jump                     |
-| TREE WARRIOR           |    2   | Left Move, Right Move, Jump                     |
+| METRO RUSH             |    6   | Left Move, Right Move, Jump                     |
+| EGG CATCHER            |    6   | Left Move, Right Move, Jump                     |
+| DANCING BALL           |    6   | Left Move, Right Move, Jump                     |
+| TREE WARRIOR           |    6   | Left Move, Right Move, Jump                     |
 | PUDDLE HOP             |   205  | Jump                                            |
 | SKATERS                |    3   | Jump In, Jump Out                               |
 | PENGUIN POP            |    4   | Jump                                            |
 | MAT BEATS              |    5   | Tiles                                           |
 | TRAPPED                |    1   | Running, Running Stopped, Jump                  |
 | TUG OF WAR             |   202  | Running, Running Stopped (Running Round)        |
+| TUG OF WAR             |   203  | Hihn knee                                       |
 | TUG OF WAR             |   205  | Jump (Jumping Round)                            |
+| EGG CATCHER MM         |    7   | Right touch, Left touch                         |
+| FISH TRAP              |    7   | Right touch, Left touch                         |
+| FRUIT SLICE            |   205  | JUMP                                            |
+| HUNGRY SNAKE           |    7   | Right touch, Left touch                         |
+| PINBALL                |    7   | Right touch, Left touch                         |
+| PING PONG              |    7   | Right touch, Left touch                         |
+| TOWER BUILDER          |   205  | JUMP                                            |
+| BOOMERANG              |   205  | JUMP                                            |
 | THE RAFT               |    2   | Left Move, Right Move, Jump                     |
 | MONSTER RIVER          |   211  | R Leg Hopping, L Leg Hopping                    |
 | MULTIPLAYER MAYHEM     |   5,0  | Tiles, Mat Controls                             |
