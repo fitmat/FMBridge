@@ -165,6 +165,10 @@ Before you get started with the FMBridge, you will require following already bei
 | Ardha Chandrasana | 3JCQ          |      -      |
 | Malasana          | 3J11          |      -      |
 | Tiles             | TIL3          | X1, x2, x3, x4 |
+| Right Tap         | 3L1N          |      -      |
+| Left Tap          | 9015          |      -      |
+| Right Touch       | AL0N          |      -      |
+| Left Touch        | A075          |      -      |
 
 
 ## 1.4 Installation
