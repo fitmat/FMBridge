@@ -2,7 +2,7 @@
 * NEW CPP Driver for iOS and Android
 * New updated InitBLE.cs and BLEControllerEventHandler.cs 
 * New "src" folder structure for separate platforms 
-* NOTE - DO NOT USE OLDER InitBLE.cs and BLECOntrollerEventHandler.cs FOR CPP DRIVER
+* NOTE - DO NOT USE OLDER InitBLE.cs and BLEControllerEventHandler.cs FOR CPP DRIVER
 * NOTE - OLDER JAVA DRIVER IS DEPRICATED FOR ALL ANDROID AND IOS GAMES
 
 ## Change Log - v0.2.5
@@ -19,10 +19,7 @@
 
 ----------------------------------------------------------
 ## TODO
-- [x] Create one cluster with only: right tap + left tap, foot displacement for taps must be smaller (Discuss on the disctance part with Saurabh)
-- [x] For PC Driver, change logic for reconneciton and init of InitBLEFramework()
 - [x] Cluster Id with One Leg Balance + One Leg Hop (priority : low)
-- [x] Cluster having: Jump + Left Tap + Right Tap with tap distance reduced, for multiplayer mode (priority : high)
 
 ------------------------------------------------
 
