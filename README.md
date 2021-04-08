@@ -3,7 +3,7 @@
 * New updated InitBLE.cs and BLEControllerEventHandler.cs 
 * New "src" folder structure for separate platforms 
 * NOTE - DO NOT USE OLDER InitBLE.cs and BLEControllerEventHandler.cs FOR CPP DRIVER
-* NOTE - OLDER JAVA DRIVER IS DEPRICATED FOR ALL ANDROID AND IOS GAMES
+* NOTE - OLDER JAVA DRIVER IS DEPRECATED FOR ALL ANDROID AND IOS GAMES
 
 ## Change Log - v0.2.5
 * Added Tap Cluster
