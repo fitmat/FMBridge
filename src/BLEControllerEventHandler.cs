@@ -58,6 +58,10 @@ namespace BLEFramework.Unity
         public static void OnBleDidDisconnect(string message)
         {
             string errorMessage = message != "Success" ? message : null;
+             #if UNITY_IPHONE
+                Debug.Log("calling BLEStatus");
+                InitBLE.setMatConnectionStatus("DISCONNECTED");
+            #endif
             OnBleDidDisconnectEvent?.Invoke(errorMessage);
         }
 
