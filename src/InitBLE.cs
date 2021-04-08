@@ -11,7 +11,7 @@ public class InitBLE
 {
     static AndroidJavaClass _pluginClass;
     static AndroidJavaObject _pluginInstance;
-    //const string driverPathName = "com.fitmat.fitmatdriver.Producer.Connection.DeviceControlActivity"; // old reference
+    // const string driverPathName = "com.fitmat.fitmatdriver.Producer.Connection.DeviceControlActivity"; // old reference
     const string driverPathName = "com.fitmat.fmjavainterface.DeviceControlActivity";
     static string BLEStatus = "";
     public static bool isInitActive = false;
@@ -108,6 +108,7 @@ public class InitBLE
             initializeHandler?.Invoke(message);
         }
     }
+#endif
 
     //STEP 4 - Init Android Class & Objects
     public static AndroidJavaClass PluginClass
@@ -134,9 +135,6 @@ public class InitBLE
             return _pluginInstance;
         }
     }
-
-
-#endif
 
     public static string GetFMResponse()
     {

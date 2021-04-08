@@ -1,30 +1,20 @@
-## Whats new in the release - v0.2.5
+## Change Log - v0.2.6
+* NEW CPP Driver for iOS and Android
+* New updated InitBLE.cs and BLEControllerEventHandler.cs 
+* New "src" folder structure for separate platforms 
+* NOTE - DO NOT USE OLDER InitBLE.cs and BLECOntrollerEventHandler.cs FOR CPP DRIVER
+* NOTE - OLDER JAVA DRIVER IS DEPRICATED FOR ALL ANDROID AND IOS GAMES
+
+## Change Log - v0.2.5
 * Added Tap Cluster
 * Added Touch Cluster and changed distance to 7
 * Added reconnection support for PC
 * NOTE - Changes only for all PC builds and MM
 
-## Whats new in the release - v0.2.4
+## Change Log - v0.2.4
 * Multiple cluster ID for particular player support added. 
 * CHECK API SECTION FOR NEW API TO SET SAME
 * NOTE - All multi-player games need to be in 0.2.4
-
-## Whats new in the release - v0.2.3
-* Added Codebase for Tree Warior
-* Bluetooth reconnection and permission Allow/Deny callback
-* MAT Pixel Short issues solved
-* NOTE - All games should at least be in 0.2.3
-
-## Whats new in the release - v0.2.2
-* Removed support for Android TV
-
-## Whats new in the release - v0.2.1
-* Added Android TV Support
-* Check point/API  [1.7.9](https://github.com/fitmat/FMBridge#17-api) on how to set device type for android type
-* New Cluster id is required for Tree Warrior, which has Right and Left tap with jump action
-* Instead of sending full fmresponse as null, send all fields of fmdata with null values
-* Change the MAT Control's logic for the tap. Add relative distance check for check sequence 
-* NOTE - PC VERSION IS NOT ADDED IN THE CURRENT RELEASE
 
 
 ----------------------------------------------------------
