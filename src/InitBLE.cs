@@ -142,7 +142,6 @@ public class InitBLE
         {
 #if UNITY_IOS
                 string ver = _getFMResponse();
-                Debug.Log("Driver Version Received: " + ver);
                 return ver;
 #elif UNITY_ANDROID
             return PluginInstance.Call<string>("_getFMResponse");

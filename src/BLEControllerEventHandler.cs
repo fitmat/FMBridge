@@ -3,7 +3,6 @@ namespace BLEFramework.Unity
     using UnityEngine;
     using System.Collections;
     using System.Collections.Generic;
-    using BLEFramework.MiniJSON;
 
     public class BLEControllerEventHandler : MonoBehaviour
     {
@@ -48,6 +47,10 @@ namespace BLEFramework.Unity
         public static void OnBleDidConnect(string message)
         {
             string errorMessage = message != "Success" ? message : null;
+             #if UNITY_IPHONE
+                //Debug.Log("calling BLEStatus");
+                InitBLE.setMatConnectionStatus("CONNECTED");
+            #endif
             OnBleDidConnectEvent?.Invoke(errorMessage);
         }
 
@@ -59,7 +62,7 @@ namespace BLEFramework.Unity
         {
             string errorMessage = message != "Success" ? message : null;
              #if UNITY_IPHONE
-                Debug.Log("calling BLEStatus");
+                //Debug.Log("calling BLEStatus");
                 InitBLE.setMatConnectionStatus("DISCONNECTED");
             #endif
             OnBleDidDisconnectEvent?.Invoke(errorMessage);
@@ -169,7 +172,7 @@ namespace BLEFramework.Unity
                             // Directly connect to MAT ID if valid mac address 
                             // FOR BATCH-1 BOARDS
                             //----------
-                            string macAddress = matID[1];
+                            string macAddress = tempSplits[0];
 
                              //----------
                             // Get MacAddress from GATT 
