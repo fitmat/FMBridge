@@ -1,5 +1,5 @@
 ## Change Log - v0.2.6
-* NEW CPP Driver for iOS, Android and Android TV 
+* NEW CPP Driver for iOS, Android and Android TV [Connection setup Process](https://github.com/fitmat/FMBridge#android-tv)
 * New updated InitBLE.cs and BLEControllerEventHandler.cs 
 * New "src" folder structure for separate platforms 
 * NOTE - DO NOT USE OLDER InitBLE.cs and BLEControllerEventHandler.cs FOR CPP DRIVER
