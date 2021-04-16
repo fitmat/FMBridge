@@ -1,9 +1,9 @@
 ## Change Log - v0.2.6
-* NEW CPP Driver for iOS and Android
+* NEW CPP Driver for iOS, Android and Android TV 
 * New updated InitBLE.cs and BLEControllerEventHandler.cs 
 * New "src" folder structure for separate platforms 
 * NOTE - DO NOT USE OLDER InitBLE.cs and BLEControllerEventHandler.cs FOR CPP DRIVER
-* NOTE - OLDER JAVA DRIVER IS DEPRECATED FOR ALL ANDROID AND IOS GAMES
+* NOTE - OLDER JAVA DRIVER IS DEPRECATED FOR ALL ANDROID, ANDROID TV AND IOS GAMES
 
 ## Change Log - v0.2.5
 * Added Tap Cluster
@@ -203,6 +203,21 @@ void Awake()
 void Awake()
 {
     //params (int GameID )
+    InitBLE.InitPCFramework(GameID);      
+}
+```
+
+
+
+#### *Android TV*
+1. Before call ing InitPCFramework() dont forget to call _setConnectionType("USB")
+2.  Call InitPCFramework(). Usually call in Awake() with game-id. 
+```csharp
+//SOMETHING LIKE THIS
+void Awake()
+{
+    //params (int GameID )
+    _setConnectionType("USB");
     InitBLE.InitPCFramework(GameID);      
 }
 ```
