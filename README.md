@@ -159,15 +159,11 @@ Before you get started with the FMBridge, you will require following already bei
 
 
 ## 1.4 Installation
-#### *Android*
-* Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\Android
+#### *Android, Windows, iOS and  Android TV*
+* Download and copy FitmatDriver.aar and move it to {Unity_Project}\Assets\Plugins\YOUR_PLATFORM_NAME}
 * Download and copy InitBLE.cs & BLEControllerEventHandler.cs and move it to {Unity_Project}\Assets\Scripts
-> Please find all files under [src](https://github.com/fitmat/FMBridge/src) folder
+> Please find all files under [src](https://github.com/fitmat/FMBridge/tree/master/src) folder
 
-#### *Windows*
-* Download and copy PCFitmatDriver folder and move it to {Unity_Project}\Assets\Plugins\Windows
-* Download and copy InitBLE.cs and move it to {Unity_Project}\Assets\Scripts
-> Please find all files under [src](https://github.com/fitmat/FMBridge/src) folder
 
 ## 1.5 Getting Started
 #### *Android* 
