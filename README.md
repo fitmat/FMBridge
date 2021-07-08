@@ -1,3 +1,14 @@
+## Change Log - v2.6
+FMCore Version - 2.6
+Android - 2.6.5
+* Clubbed Android and TV Platform
+* 64 bit platform support changes
+* Version change
+
+iOS - 2.6.3
+* 64 bit platform support changes
+* Version change
+    
 ## Change Log - v0.2.6
 * NEW CPP Driver for iOS, Android and Android TV [Connection setup Process](https://github.com/fitmat/FMBridge#android-tv)
 * New updated InitBLE.cs and BLEControllerEventHandler.cs 
