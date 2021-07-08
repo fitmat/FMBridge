@@ -1,11 +1,11 @@
 ## Change Log - v2.6
-* FMCore Version - 2.6
-* Android - 2.6.5
+#### FMCore Version - 2.6
+#### Android - 2.6.5
 * Clubbed Android and TV Platform
 * 64 bit platform support changes
 * Version change
 
-* iOS - 2.6.3
+##### iOS - 2.6.3
 * 64 bit platform support changes
 * Version change
     
