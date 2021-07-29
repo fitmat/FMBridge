@@ -1,8 +1,11 @@
-## FMDriver Released Versions
-##### Android - 2.7.5
-##### iOS - 2.6.3
-##### Windows - 2.6
+## 🚀 Released Versions 
 
+Platform | Version
+------------ | -------------
+<img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" /> | `v2.7.5`
+<img src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white" /> | `v2.6.3`
+<img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" /> | `v2.6`
+  
 ## Change Log - v2.7
 ##### FMCore Version - 2.7
 ##### Android - 2.7.5
