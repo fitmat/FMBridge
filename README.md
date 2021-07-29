@@ -1,3 +1,13 @@
+## FMDriver Released Versions
+##### Android - 2.7.5
+##### iOS - 2.6.3
+##### Windows - 2.6
+
+## Change Log - v2.7
+##### FMCore Version - 2.7
+##### Android - 2.7.5
+* Change in TAP action
+
 ## Change Log - v2.6
 ##### FMCore Version - 2.6
 ##### Android - 2.6.5
