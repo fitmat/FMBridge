@@ -4,13 +4,15 @@ Platform | Version | Download
 ------------ | ------------- | ------------- 
 <img  src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"  /> | `v2.7.5` 	|	 [Download](https://github.com/fitmat/FMBridge/blob/master/src/Android/FMDriver_v2.7.5.aar) 
 <img  src="https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white"  /> | `v2.7.3`  	| 		[Download](https://github.com/fitmat/FMBridge/blob/master/src/iOS/FMDriver_v2.7.3.zip) 
-<img  src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"  /> | 	`v2.6` 	| 	 [Download](https://github.com/fitmat/FMBridge/tree/master/src/Windows/v2.6_Stable_Java) 
+<img  src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white"  /> | 	`v2.7.1` 	| 	 [Download](https://github.com/fitmat/FMBridge/tree/master/src/Windows/v2.6_Stable_Java) 
 
 ## Change Log - v2.7
 ##### FMCore Version - 2.7
 ##### Android - 2.7.5
 * Change in TAP action
 ##### iOS - 2.7.3
+* Change in TAP action
+##### Windows - 2.7.1
 * Change in TAP action
 
 ## Change Log - v2.6
