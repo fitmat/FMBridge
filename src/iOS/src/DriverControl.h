@@ -7,7 +7,7 @@
 #define FMINTERFACE_DRIVERCONTROL_H
 
 //#define DRIVER_VERSION "CPP_TV_0.0.10"
-#define DRIVER_VERSION "2.7.3"
+#define DRIVER_VERSION "2.7.4"
 
 #include "blobprocessor/Processor.h"
 #include "blobprocessor/Blob.h"
