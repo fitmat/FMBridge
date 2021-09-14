@@ -18,7 +18,7 @@ public class InitBLE
     public static bool isInitActive = false;
     public static string MAC_ADDRESS = "";
     public static string MAT_NAME = "";
-    
+    public static string MAT_UUID = "";	
     //required variables
     static string peripheralJsonList = null;
     
@@ -59,19 +59,19 @@ public class InitBLE
     
     [DllImport("__Internal")]
     private static extern void _setGameMode(int _gameMode);
-    
+
     [DllImport("__Internal")]
     private static extern int _getGameMode();
-    
+
     [DllImport("__Internal")]
     private static extern void _setGameID(int _clusterID);
-    
+
     [DllImport("__Internal")]
     private static extern int _getGameID();
-    
+
     [DllImport("__Internal")]
     private static extern void _setGameID_Multiplayer(int _P1_gameID, int _P2_gameID);
-    
+
     [DllImport("__Internal")]
     private static extern int _getGameID_Multiplayer(int _playerID);
     
@@ -147,6 +147,7 @@ public class InitBLE
             return PluginInstance.Call<string>("_getFMResponse");
 #elif UNITY_STANDALONE_WIN
             string defaultResponse = DeviceControlActivity._getFMResponse();
+            // this is to check if "null" response is coming from driver as this will come until 1st action is made
             if (defaultResponse.Equals("null", StringComparison.OrdinalIgnoreCase)) {
                 
                 //defaultResponse = "{\"count\":1,\"timestamp\":1597237057689,\"playerdata\":[{\"id\":1,\"fmresponse\":{\"action_id\":\"NOID\",\"action_name\":\"Jump\",\"properties\":\"null\"}}]}";
@@ -480,5 +481,12 @@ public class InitBLE
         }
 #endif
         return result;
+    }
+
+    public static void DisconnectMat()
+    {
+#if UNITY_IOS
+        _Disconnect();
+#endif
     }
 }

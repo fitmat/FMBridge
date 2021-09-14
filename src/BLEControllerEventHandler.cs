@@ -136,7 +136,7 @@ namespace BLEFramework.Unity
                     {
                         string[] tempSplits = allBleDevices[i].Split('|');
                         
-                        Debug.Log("Mac : " + tempSplits[0] + " Device Name:" + tempSplits[1]);
+                        Debug.Log("Mac : " + tempSplits[0] + " | Device Name: " + tempSplits[1] + " | Contains : "+ tempSplits[1].Contains("YIPLI") + " | Length : " + tempSplits[1].Length);
                         if (tempSplits[1].Contains("YIPLI") && tempSplits[1].Length > 5)
                         {
                             string[] matID = tempSplits[1].Split('-');
@@ -147,8 +147,11 @@ namespace BLEFramework.Unity
                             /**********************************/
                             
                             //Check for the Mat name you want to connect against the scanned list
-                            if (tempSplits[1] == InitBLE.MAT_NAME)
+                            if (tempSplits[1] == InitBLE.MAT_NAME){
+                                InitBLE.MAT_UUID = tempSplits[0];
                                 InitBLE.ConnectPeripheral(tempSplits[0]);
+                                break;
+                            }
 
                         }
                         else if (tempSplits[1].Contains("YIPLI") && tempSplits[1].Length == 5)
@@ -162,6 +165,7 @@ namespace BLEFramework.Unity
                             // Directly connect to MAT ID if valid mac address 
                             // FOR BATCH-1 BOARDS
                             //----------
+                            Debug.LogError("from batch 1 boards else if");
                             string macAddress = tempSplits[0];
                             
                             //----------
@@ -172,10 +176,19 @@ namespace BLEFramework.Unity
                             
                             
                             Debug.Log(macAddress + " " + InitBLE.MAC_ADDRESS);
-                            if (InitBLE.MAC_ADDRESS == macAddress)
-                            {
-                                InitBLE.ConnectPeripheral(tempSplits[0]);
-                            }
+                            InitBLE.MAT_UUID = tempSplits[0];
+                            InitBLE.ConnectPeripheral(tempSplits[0]);
+                            break;
+
+                            // ---------OLDER  CHECK [NOT WORKING] FOLLOW -----
+                            // if (InitBLE.MAC_ADDRESS == macAddress)
+                            // {
+                            //     Debug.LogError("from batch 1 boards else if, next line will start connection");
+                            //     InitBLE.ConnectPeripheral(tempSplits[0]);
+                            // }
+                        }
+                        else {
+                            Debug.LogError("from final else as above all conditions have failed");
                         }
                     }
                 }
